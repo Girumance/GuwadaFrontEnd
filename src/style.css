@@ -1,0 +1,209 @@
+*{
+    padding:0;
+    margin:0;
+    color:#333
+}
+
+.Navigation{
+width:100%;
+height:10vh;
+background-color: #333;
+color:#fff;
+}
+
+.Navigation-color{
+    background-color: #001970;
+    
+    
+}
+
+.Navigation-color ul li a {
+
+    color: #fff;
+    
+
+}
+
+
+.Navigation-color ul li :hover {
+
+
+    background-color: #303f9f;
+    border-radius: 8px;
+}
+
+.Footer{
+ background-color: #001970;
+ 
+height: 50vh;
+padding:10%;
+
+}
+
+.Footer h2,h3,h4,h5{
+
+    color: #ddd;
+
+}
+
+.Footer p{
+    color: #ddd;
+}
+
+
+.Poster{
+    height:70vh;
+    background-image: url("IMG/Farmhouse.jpg");
+    background-size: cover;
+    position:relative;
+    z-index: 0;
+    
+}
+
+.Poster-Shadow{
+    background-color: rgba(0,0,0,0.5);
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 1;
+    width:100%;
+    height:70vh;
+
+
+}
+
+.Quote{
+
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:55%;
+    color:#fff;
+    text-transform: capitalize;
+   
+    z-index: 2;
+    padding:10px;
+    transform: translate(-50%,-50%);
+    font-family:serif;
+    
+}
+
+.Quote-upper{
+    color:#fff;
+    font-size:300%;
+}
+
+.Quote-lowwer{
+    color:#fff;
+    font-size:250%;
+}
+.Quote-owner{
+    color:#fff;
+    font-size:150%
+}
+
+.ratedResuturant{
+    min-height: 80vh;
+}
+
+.card-image{
+    min-height: 100%;
+    max-height: 100%;
+}
+
+.card{
+    height: 60vh;
+    margin-top:10%;
+    Color:#333;
+}
+
+.card-img-top{
+    height: 40%;
+
+}
+
+.poster-buttons{
+
+   margin-left:25%;
+
+}
+
+
+.Service{
+    position: relative;
+    width:100%;
+    height:50vh;
+    background-image: url("IMG/service.jpg");
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+}
+
+
+.sshadow{
+    position: absolute;
+    top:0;
+    left:0;  
+    width:100%;
+    height: 50vh;
+    background-color:rgba(0, 25, 112, 0.6);
+    z-index: 1;
+    color:#fff;
+    
+}
+
+.Sdesc{
+
+    position: absolute;
+    left:0;
+    top:0;  
+    width:100%;
+   max-height: 50vh;
+    z-index: 2;
+    color:#fff;
+    font-family: serif;
+    
+}
+
+.Sdesc h2{
+    color:#fff;
+}
+
+
+
+.img-size{
+width:50%;
+height: 40%;
+
+}
+
+.control-panel{
+
+font-family: serif;
+padding-top:5%;
+color:#666;
+}
+
+.control-panel h3,h5{
+    color:#666;
+}
+
+.about{
+    margin:8%;
+}
+
+.cat{
+    margin-top: 3%;
+    position: relative;
+}
+
+.pos-fixed{
+position:fixed;
+width:30%;
+margin-left:7%;
+}
+.kitchen{
+    position: relative;
+}
+
+
