@@ -40,11 +40,25 @@ padding:10%;
 
 }
 
-.Footer  h2,h3,h4,h5{
+.Footer  h2{
 
     color: #ddd;
 
 }
+
+.Footer h3{
+    color: #ddd;
+
+}
+
+.Footer h4{
+    color: #ddd;
+}
+
+.Footer h5{
+    color: #ddd;
+}
+
 
 .Footer p{
     color: #ddd;
@@ -234,3 +248,14 @@ font-family: serif;
     margin-top: 15px;
 }
 
+.cartIcon{
+    padding:5px;
+}
+.cartIcon :hover{
+    transform: scale(1.1)
+
+}
+
+.cartIcon :active{
+    transform: scale(1.2)
+}

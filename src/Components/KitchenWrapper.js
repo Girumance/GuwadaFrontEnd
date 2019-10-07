@@ -1,5 +1,5 @@
 import React from "react"
-import Kitchen from "./Components/Kitchen"
+import Kitchen from "./Kitchen"
 
 export default class KitchenWrapper extends React.Component{
 

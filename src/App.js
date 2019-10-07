@@ -3,6 +3,7 @@ import React from 'react';
 import Navigation from "./Components/Navigation"
 import './style.css';
 import "./bootstrap.min.css"
+
 import Poster from './Components/Poster';
 import Footer from './Components/Footer';
 import RatedResturants from './Components/RatedResturants';

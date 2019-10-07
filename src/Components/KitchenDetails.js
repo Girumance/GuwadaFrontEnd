@@ -1,5 +1,7 @@
 import React from "react"
 import image from "../IMG/service.jpg"
+import Menu from "./Menu"
+import Cart from "./Cart"
 export default class KitchenDetails extends React.Component{
 
 
@@ -52,14 +54,7 @@ export default class KitchenDetails extends React.Component{
 
 
                 </div>
-                <table className="table topMargin">
-                <tr>
-                    <td>
-
-                </td>
-                </tr>
-                
-                </table>
+                <br />
 
                 <div className="row">
                     <div className="col-md-2">
@@ -67,12 +62,12 @@ export default class KitchenDetails extends React.Component{
 
                     </div>
 
-                    <div className="col-md-6">
-                        sjlhfsljlfkjsjflkjsfl
+                    <div className="col-md-7">
+                        <Menu/>
                     </div>
 
-                    <div className="col-md-4">
-                            fljslkjlkfjslkfjlkjlk
+                    <div className="col-md-3">
+                            <Cart/>
                     </div>
 
                 </div>

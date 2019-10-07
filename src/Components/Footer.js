@@ -32,7 +32,7 @@ import React from "react"
                            <h4>Get In Touch With US</h4>
                                 
                                 <p>+251-966-935-941</p>
-                                <p>help@deliveraddis.com</p>
+                                <p>help@guwada.com</p>
 
                             </div>
 

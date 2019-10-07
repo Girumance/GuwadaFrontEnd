@@ -1,6 +1,6 @@
 import React from "react";
 import Kitchen from "./Kitchen";
-import KitchenWrapper from "../KitchenWrapper";
+import KitchenWrapper from "./KitchenWrapper";
 
 export default class Restaurants extends React.Component{
 
