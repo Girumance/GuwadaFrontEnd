@@ -9,6 +9,7 @@ import RatedResturants from './Components/RatedResturants';
 import Services from './Components/Services';
 import About from './Components/About';
 import Restaurants from './Components/Restaurants';
+import KitchenDetails from './Components/KitchenDetails';
 
 function App() {
 
@@ -16,14 +17,15 @@ function App() {
    * <Poster/>
       <RatedResturants/>
       <Services/>
+      <Restaurants/>
       <About/>
       
    */
   return (
     <div className="App">
       <Navigation/>
+      <KitchenDetails/>
       
-      <Restaurants/>
       
       <Footer/>
       

@@ -10,9 +10,9 @@ export default class Restaurants extends React.Component{
                 <div className="container cat">
                     <div className="row">
                         <div className="pos-fixed">
-                        <div className="col-md-3 ">
+                        <div className="col-md-3  catagory">
                         
-                           <table className="table table-hover">
+                           <table className="table ">
                                <th>
                                 Catagories
                                </th>
@@ -21,7 +21,7 @@ export default class Restaurants extends React.Component{
                                </tr>
 
 
-                               <tr>
+                               <tr className="selected">
                                    <td>Hotels</td>
                                </tr>
 

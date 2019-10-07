@@ -40,7 +40,7 @@ padding:10%;
 
 }
 
-.Footer h2,h3,h4,h5{
+.Footer  h2,h3,h4,h5{
 
     color: #ddd;
 
@@ -197,6 +197,12 @@ color:#666;
     position: relative;
 }
 
+
+.catagory table tr:hover{
+
+    background-color: #AAA;
+}
+
 .pos-fixed{
 position:fixed;
 width:30%;
@@ -206,4 +212,25 @@ margin-left:7%;
     position: relative;
 }
 
+.selected{
+
+    background-color: #001970;
+    color: #fff;
+    border-radius: 8px;
+
+}
+
+.selected td{
+    color:#fff;
+}
+
+.banner{
+margin-top:4%;
+min-height: 60vh;
+font-family: serif;
+}
+
+.topMargin{
+    margin-top: 15px;
+}
 
