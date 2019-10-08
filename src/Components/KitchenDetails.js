@@ -66,7 +66,7 @@ export default class KitchenDetails extends React.Component{
                         <Menu/>
                     </div>
 
-                    <div className="col-md-3">
+                    <div className="col-md-3 cartMargin">
                             <Cart/>
                     </div>
 

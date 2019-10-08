@@ -259,3 +259,19 @@ font-family: serif;
 .cartIcon :active{
     transform: scale(1.2)
 }
+
+
+.cartArea{
+
+    width:100%;
+    min-height: 50vh;
+    margin:10px;
+    padding:10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #fffffd;
+
+
+
+}
+
