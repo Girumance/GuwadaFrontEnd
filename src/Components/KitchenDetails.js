@@ -2,6 +2,7 @@ import React from "react"
 import image from "../IMG/service.jpg"
 import Menu from "./Menu"
 import Cart from "./Cart"
+import Catagory from "./Catagory"
 export default class KitchenDetails extends React.Component{
 
 
@@ -57,11 +58,13 @@ export default class KitchenDetails extends React.Component{
                 <br />
 
                 <div className="row">
+                    
                     <div className="col-md-2">
-                        hfjkshfkjshkfkj
-
+                    
+                        <Catagory/>
+                        
                     </div>
-
+                    
                     <div className="col-md-7">
                         <Menu/>
                     </div>

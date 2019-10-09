@@ -275,3 +275,13 @@ font-family: serif;
 
 }
 
+.setMargin form{
+
+min-height: 50vh;
+
+}
+
+
+form{
+    margin:10%;
+}

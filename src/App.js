@@ -11,6 +11,7 @@ import Services from './Components/Services';
 import About from './Components/About';
 import Restaurants from './Components/Restaurants';
 import KitchenDetails from './Components/KitchenDetails';
+import AddKitchen from './Components/AddKitchen';
 
 function App() {
 
@@ -20,13 +21,14 @@ function App() {
       <Services/>
       <Restaurants/>
       <About/>
+       <KitchenDetails/>
+      
       
    */
   return (
     <div className="App">
       <Navigation/>
-      <KitchenDetails/>
-      
+     <AddKitchen/>
       
       <Footer/>
       
