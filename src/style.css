@@ -126,7 +126,7 @@ padding:10%;
 }
 
 .card{
-    height: 60vh;
+    min-height: 30vh;
     margin-top:10%;
     Color:#333;
 }
@@ -284,4 +284,9 @@ min-height: 50vh;
 
 form{
     margin:10%;
+}
+
+.order{
+    margin-top: 10vh;
+    min-height: 50vh;
 }

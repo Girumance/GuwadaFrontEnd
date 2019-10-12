@@ -13,7 +13,9 @@ import Restaurants from './Components/Restaurants';
 import KitchenDetails from './Components/KitchenDetails';
 import AddKitchen from './Components/AddKitchen';
 import AddKMenu from './Components/AddMenu';
-import showMenu from './Components/showMenu';
+import ShowMenu from './Components/ShowMenu';
+import ShowMenuWrapper from './Components/ShowMenuWrapper';
+import Order from './Components/Order';
 
 function App() {
 
@@ -27,13 +29,13 @@ function App() {
       <AddKitchen/>
        <KitchenDetails/>
       <AddKMenu/>  
-      
+      <ShowMenuWrapper/>
    */
   return (
     <div className="App">
       <Navigation/>
      
-      <showMenu/>
+      <Order/>
       
       <Footer/>
       
