@@ -12,23 +12,28 @@ import About from './Components/About';
 import Restaurants from './Components/Restaurants';
 import KitchenDetails from './Components/KitchenDetails';
 import AddKitchen from './Components/AddKitchen';
+import AddKMenu from './Components/AddMenu';
+import showMenu from './Components/showMenu';
 
 function App() {
 
   /**
-   * <Poster/>
-      <RatedResturants/>
+   * 
+   * <RatedResturants/>
       <Services/>
-      <Restaurants/>
       <About/>
-       <KitchenDetails/>
       
+     <Poster/> 
+      <AddKitchen/>
+       <KitchenDetails/>
+      <AddKMenu/>  
       
    */
   return (
     <div className="App">
       <Navigation/>
-     <AddKitchen/>
+     
+      <showMenu/>
       
       <Footer/>
       
