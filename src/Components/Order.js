@@ -8,10 +8,12 @@ export default class Order extends React.Component{
                 <table className="table table-bordered">
                     <tr>
                         <th>Title</th>
+                        <th>Quantity</th>
+                        <th>Additional Info</th>
                         <th>Customer Name</th>
                         <th>Block</th>
                         <th> Room No. </th>
-                        <th>Status</th>
+                        <th>Date & Time</th>
                         <th>Action</th>
                     </tr>
                 </table>

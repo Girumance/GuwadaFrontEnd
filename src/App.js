@@ -16,6 +16,7 @@ import AddKMenu from './Components/AddMenu';
 import ShowMenu from './Components/ShowMenu';
 import ShowMenuWrapper from './Components/ShowMenuWrapper';
 import Order from './Components/Order';
+import Dashboard from './Components/Dashboard';
 
 function App() {
 
@@ -30,12 +31,13 @@ function App() {
        <KitchenDetails/>
       <AddKMenu/>  
       <ShowMenuWrapper/>
+      <Order/>
    */
   return (
     <div className="App">
       <Navigation/>
      
-      <Order/>
+        <Dashboard/> 
       
       <Footer/>
       

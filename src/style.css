@@ -290,3 +290,14 @@ form{
     margin-top: 10vh;
     min-height: 50vh;
 }
+
+.dashboard{
+    margin-top:10vh;
+}
+
+.dashboard_menu{
+
+    position:fixed;
+    top:8;
+    left:10;
+}

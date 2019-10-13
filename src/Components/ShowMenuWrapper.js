@@ -5,7 +5,7 @@ export default class ShowMenuWrapper extends React.Component{
     render(){
         return(
             <div className="container">
-                <h3>ALl your Menus</h3>
+                <h3>All your Menus</h3>
             <div className="row">
                 <div className="col-md-4">
                         <ShowMenu/>
