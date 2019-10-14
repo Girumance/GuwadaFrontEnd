@@ -281,6 +281,12 @@ min-height: 50vh;
 
 }
 
+.discustomer{
+    position: fixed;
+    left:0;
+    top:10;
+}
+
 
 form{
     margin:10%;

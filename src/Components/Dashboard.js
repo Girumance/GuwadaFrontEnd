@@ -3,6 +3,7 @@ import Order from "./Order"
 import ShowMenu from "./ShowMenu"
 import ShowMenuWrapper from "./ShowMenuWrapper"
 import AddKMenu from "./AddMenu"
+import DispalyCustomer from "./DispalyCustomer"
 
 export default class Dashboard extends React.Component{
 
@@ -41,7 +42,7 @@ render(){
 
                     <div className="col-md-10">
 
-                        <ShowMenuWrapper/>
+                        <Order/>
 
                 </div>
                 </div>
@@ -49,6 +50,8 @@ render(){
                 
 
             </div>
+
+            <DispalyCustomer/>
             </div>
     
     );

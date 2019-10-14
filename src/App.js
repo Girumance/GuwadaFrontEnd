@@ -37,7 +37,7 @@ function App() {
     <div className="App">
       <Navigation/>
      
-        <Dashboard/> 
+        <Dashboard/>
       
       <Footer/>
       

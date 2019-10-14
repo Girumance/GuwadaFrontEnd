@@ -10,9 +10,6 @@ export default class Order extends React.Component{
                         <th>Title</th>
                         <th>Quantity</th>
                         <th>Additional Info</th>
-                        <th>Customer Name</th>
-                        <th>Block</th>
-                        <th> Room No. </th>
                         <th>Date & Time</th>
                         <th>Action</th>
                     </tr>
