@@ -10,6 +10,7 @@ export default class Dashboard extends React.Component{
 render(){
     return(
         <div className="dashboard">
+            <DispalyCustomer/>
         <div className="container">
             <div className="row">
                 
@@ -42,16 +43,16 @@ render(){
 
                     <div className="col-md-10">
 
-                        <Order/>
+                        <Order />
 
-                </div>
-                </div>
+                    </div>
+                    </div>
 
-                
+                    
 
             </div>
 
-            <DispalyCustomer/>
+            
             </div>
     
     );

@@ -283,9 +283,18 @@ min-height: 50vh;
 
 .discustomer{
     position: fixed;
-    left:0;
-    top:10;
+    left:80%;
+    top:13%;
+    background-color: #efefef;
+    color: #fff;
+    width:15%;
+    font-family: serif;
+    height:35vh;
+    border-radius: 8px;
+
 }
+    
+    
 
 
 form{
@@ -307,3 +316,14 @@ form{
     top:8;
     left:10;
 }
+
+.profile-icon{
+    width:50%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin-left:20%;
+    margin-top:10px;
+   
+    
+    }
