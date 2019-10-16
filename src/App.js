@@ -17,6 +17,7 @@ import ShowMenu from './Components/ShowMenu';
 import ShowMenuWrapper from './Components/ShowMenuWrapper';
 import Order from './Components/Order';
 import Dashboard from './Components/Dashboard';
+import MenuModal from './Components/MenuModal';
 
 function App() {
 

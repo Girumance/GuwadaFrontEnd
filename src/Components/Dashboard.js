@@ -16,7 +16,7 @@ render(){
                 
                 <div className="col-md-2">
                 <div className="dashboard_menu">
-                    <table className="table table-bordered">
+                    <table className="table table-bordere">
                         <tr>
                             <th>Dashboard</th>
                     
