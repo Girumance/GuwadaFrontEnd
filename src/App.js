@@ -23,11 +23,14 @@ function App() {
 
   /**
    * 
-   * <RatedResturants/>
-      <Services/>
-      <About/>
+   * 
       
-     <Poster/> 
+      
+    <Poster/> 
+      <RatedResturants/>
+      <Services/> 
+      <About/>
+     
       <AddKitchen/>
        <KitchenDetails/>
       <AddKMenu/>  
@@ -37,9 +40,7 @@ function App() {
   return (
     <div className="App">
       <Navigation/>
-     
-        <Dashboard/>
-      
+     <AddKMenu/>
       <Footer/>
       
 
