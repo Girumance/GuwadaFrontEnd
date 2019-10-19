@@ -18,14 +18,14 @@ import ShowMenuWrapper from './Components/ShowMenuWrapper';
 import Order from './Components/Order';
 import Dashboard from './Components/Dashboard';
 import MenuModal from './Components/MenuModal';
+import { BrowserRouter,Route } from 'react-router-dom/cjs/react-router-dom.min';
+
 
 function App() {
 
   /**
    * 
-   * 
-      
-      
+   *    
     <Poster/> 
       <RatedResturants/>
       <Services/> 
@@ -36,11 +36,17 @@ function App() {
       <AddKMenu/>  
       <ShowMenuWrapper/>
       <Order/>
+       <AddKMenu/>
    */
   return (
     <div className="App">
       <Navigation/>
-     <AddKMenu/>
+  
+      <BrowserRouter>
+      <Route path="/" component={Dashboard} />
+        
+      
+      </BrowserRouter>
       <Footer/>
       
 

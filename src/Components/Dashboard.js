@@ -4,6 +4,8 @@ import ShowMenu from "./ShowMenu"
 import ShowMenuWrapper from "./ShowMenuWrapper"
 import AddKMenu from "./AddMenu"
 import DispalyCustomer from "./DispalyCustomer"
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { Link } from "react-router-dom/cjs/react-router-dom.min"
 
 export default class Dashboard extends React.Component{
 
@@ -11,7 +13,7 @@ render(){
     return(
         <div className="dashboard">
             <DispalyCustomer/>
-        <div className="container">
+    <div className="container">
             <div className="row">
                 
                 <div className="col-md-2">
@@ -22,11 +24,11 @@ render(){
                     
                         </tr>
                         <tr>
-                         <td>Add Menu</td>   
+                         <td><Link to="/addMenu">Add Menu</Link></td>   
                         </tr>
 
                         <tr>
-                         <td>Show Menu</td>   
+                         <td><Link to="/showMenu">Show Menu</Link></td>   
                         </tr>
 
                         <tr>
@@ -43,7 +45,14 @@ render(){
 
                     <div className="col-md-10">
 
-                        <Order />
+                    <Switch>
+                        <Route path="/addMenu" component={AddKMenu} exact/>
+                        <Route path="/" component={Order} exact/>
+                        <Route path="/showMenu" component={ShowMenuWrapper} exact/>
+                    
+                    </Switch>
+                            
+                    
 
                     </div>
                     </div>

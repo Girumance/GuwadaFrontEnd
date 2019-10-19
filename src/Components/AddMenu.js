@@ -10,6 +10,8 @@ export default class AddKMenu extends React.Component{
 
   addMenu(){
 
+    
+
     let title=this.refs.title.value;
     let desc=this.refs.desc.value;
     let price=this.refs.price.value;
@@ -37,6 +39,7 @@ export default class AddKMenu extends React.Component{
         return(
            
             <div className="container">
+              
                <div className="setMargin">
   
                                 <h3>Add a Menu!</h3>
