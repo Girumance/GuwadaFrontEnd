@@ -1,13 +1,46 @@
 import React from "react";
 import Kitchen from "./Kitchen";
 import KitchenWrapper from "./KitchenWrapper";
+import { connect } from "react-redux";
+import {Redirect} from "react-router-dom"
+import Axios from "axios";
+ class Restaurants extends React.Component{
 
-export default class Restaurants extends React.Component{
+    constructor(){
+        super();
+
+        this.state={
+            kitchen:[]
+        }
+
+        
+    }
+
+    componentDidMount(){
+
+        Axios.get("http://localhost:1234/kitechen/getAll").then(res => {
+            this.setState({
+                kitchen:res.data
+            })
+        })
+             
+    }
 
         render(){
+            
+                
+                
+        
+            
 
+                
             return(
                 <div className="container cat">
+                    {
+                        this.props.isLoggedIn==false ? <Redirect to="/" /> : ""
+                        
+
+                    }
                     <div className="row">
                         <div className="pos-fixed">
                         <div className="col-md-3  catagory">
@@ -46,7 +79,7 @@ export default class Restaurants extends React.Component{
                         </div>
                         <div className="col-md-9 kitchen">
                         
-                                <KitchenWrapper/>
+                                <KitchenWrapper kitchen={this.state.kitchen}/>
                         </div>
 
                     </div>
@@ -57,3 +90,14 @@ export default class Restaurants extends React.Component{
         }
 
 }
+
+const mapStateToProps= (store) => {
+
+    return {
+
+        isLoggedIn:store.isLoggedIn
+    }
+
+}
+
+export default connect(mapStateToProps) (Restaurants);

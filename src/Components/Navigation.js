@@ -1,10 +1,32 @@
 import React from "react"
-
+import Login from "./Login"
 export default class Navigaton extends React.Component{
+
+  constructor(){
+    super();
+    
+    this.state={
+      loginClicked:false
+    }
+
+    this.loginHandler=this.loginHandler.bind(this);
+  }
+
+  loginHandler(){
+    this.setState({
+      loginClicked:!this.state.loginClicked
+    });
+
+    console.log("log:"+this.state.loginClicked)
+
+  
+    
+  }
+
 
     render(){
         return(
-        
+
             <nav class="navbar navbar-expand-md Navigation-color fixed-top"> 
             <a class="navbar-brand" href="#">Guwada</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +48,7 @@ export default class Navigaton extends React.Component{
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Log in</a>
+                  <a class="nav-link" href="#" onClick={this.loginHandler} >Log in</a>
                 </li>
 
               </ul>
@@ -35,6 +57,8 @@ export default class Navigaton extends React.Component{
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
               </form>
             </div>
+
+            
           </nav>
 
           

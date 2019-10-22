@@ -13,11 +13,11 @@ export default class CartList extends React.Component{
 
                     <div className="row">
                         <div className="col-md-7">
-                            jkdjkfjdljdf
+                            {}
                         </div>
 
                         <div className="col-md-3">
-                            dfdfd
+                                {}
                         </div>
 
                         <div className="col-md-2">

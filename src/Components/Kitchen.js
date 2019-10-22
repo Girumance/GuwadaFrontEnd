@@ -1,12 +1,39 @@
 import React from "react"
 import image from "../IMG/Farmhouse.jpg"
-
+import {Redirect} from "react-router-dom"
 export default class Kitchen extends React.Component{
 
 
+    constructor(){
+        super();
+
+        this.state={
+            clicked:false,
+            kitchen:[]
+        }
+
+        this.clickHandler=this.clickHandler.bind(this);
+    }
+
+    clickHandler(){
+
+            this.setState({
+                clicked:true
+            })
+
+
+    }
+
     render(){
+        let path="/Kitechen/"+this.props.kitchen.id
         return(
-                <div className="container-fluid">
+            
+
+                
+        
+                <div onClick={this.clickHandler} className="container-fluid">
+
+                {(this.state.clicked==true) ? <Redirect to={path}/> : ""}    
                     <div className="row">
                         <div className="col-md-3">
                                 <img className="img-fluid" src={image} />
@@ -17,7 +44,7 @@ export default class Kitchen extends React.Component{
                             <div className="container-fluid">
                                 <div className="row">
                                     <div className="col-md-4">
-                                        <h2>Hilton</h2>
+                                        <h2>{this.props.kitchen.title}</h2>
                                     </div>
 
                                     <div className="col-md-8">
@@ -30,8 +57,9 @@ export default class Kitchen extends React.Component{
 
                                 <div className="row">
                                     <div className="col-md-12">
-                                    A local staple for almost 20 years, Aladdin has been serving some of the finest Armenian and Mediterranean food in Addis. Items do not come with pita unless specified in the description.
-                                    </div>
+                                    
+                                    {this.props.kitchen.descriptioin}
+                                     </div>
 
                                 </div>
 

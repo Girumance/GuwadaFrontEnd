@@ -1,37 +1,60 @@
 import React from "react"
 import MenuList from "./MenuList"
+import Axios from "axios"
+import { connect } from "react-redux"
 
-export default class Menu extends React.Component{
-    render(){
+class Menu extends React.Component{
+
+constructor(props){
+    super(props)
+
+    this.state={
+        menu:[]
+        
+        
+
+    }
+}
+
+
+
+componentDidMount(){
+    let path="http://localhost:1234/kitechen/getmenu/"+this.props.id
+
+    Axios.get(path).then( res => {
+
+        this.setState({
+            menu:res.data
+        })
+
+    }
+
+    );
+}
+
+    render(){  
+       
         return(
             <div className="row">
                 <h3>Dishes</h3>
                 <table className="table">
-                    <tr>
-                        <td> <MenuList/></td>
-                    </tr>
+                       
+                    {
+                        
+                      this.state.menu.map( (menu,index) => <tr><td><MenuList kid={this.props.id} key={index} menu={menu}/></td></tr> )    
 
-                    <tr>
-                        <td> <MenuList/></td>
-                    </tr>
-
-
-                    <tr>
-                        <td> <MenuList/></td>
-                    </tr>
-
-
-                    <tr>
-                        <td> <MenuList/></td>
-                    </tr>
-
-
-                    <tr>
-                        <td> <MenuList/></td>
-                    </tr>
-                </table>
+                    }                       
+                   
+                    
+                 </table>
 
             </div>
         );
     }
 }
+
+
+
+
+
+export default connect() (Menu);

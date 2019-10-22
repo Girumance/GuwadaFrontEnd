@@ -4,30 +4,26 @@ import Kitchen from "./Kitchen"
 export default class KitchenWrapper extends React.Component{
 
     render(){
+        console.log(this.props.kitchen)
         return(
 
+            
+            
             <div className="wrapper">
 
                 <table className="table">
-                    <tr>
-                        <td> <Kitchen/> </td>
-                    </tr>
+                   {
 
-                    <tr>
-                        <td> <Kitchen/> </td>
-                    </tr>
+                     
 
-                    <tr>
-                        <td> <Kitchen/> </td>
-                    </tr>
+                this.props.kitchen.map( (kitchen,index) => <tr>
+                <td> <Kitchen key={index} kitchen={kitchen}/> </td>
+                 </tr>)
 
-                    <tr>
-                        <td> <Kitchen/> </td>
-                    </tr>
-
-                    <tr>
-                        <td> <Kitchen/> </td>
-                    </tr>
+                   } 
+                   
+                   
+                   
                 </table>
 
             </div>

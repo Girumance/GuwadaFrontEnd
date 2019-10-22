@@ -1,5 +1,5 @@
 import React from "react"
-
+import Login from "./Login"
 
 export default class Poster extends React.Component{
 
@@ -17,7 +17,7 @@ render(){
 
                     <div className="contain poster-buttons">
                         <div className="row ">
-                            
+                        <Login/>
                             <div className="col-md-4">
                                 <button className=" btn btn-outline-warning btn-block btn-lg">Log In</button>
                             </div>
@@ -32,7 +32,7 @@ render(){
                     </div>
 
             </div>
-
+           
 
         </div>
     );

@@ -1,5 +1,9 @@
 import React from "react"
 import axios from "axios"
+
+
+
+
 export default class AddKMenu extends React.Component{
 
   constructor(){
@@ -9,8 +13,6 @@ export default class AddKMenu extends React.Component{
   }
 
   addMenu(){
-
-    
 
     let title=this.refs.title.value;
     let desc=this.refs.desc.value;
@@ -87,14 +89,9 @@ export default class AddKMenu extends React.Component{
                         <small id="emailHelp" class="form-text text-muted">Upload a picture for your Menu!!</small>
                       </div>
 
-
-
-
-                      
-                      
-                      <button  onClick={this.addMenu} class="btn btn-primary">Add</button>
+      
+          <button  onClick={this.addMenu} class="btn btn-primary">Add</button>
                 
-
 </div>
 </div>
             
