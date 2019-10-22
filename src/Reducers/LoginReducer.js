@@ -41,10 +41,10 @@ const LoginReducer=(state={},action) =>{
    
 
     else if(action.type==="ACTION_ADDMEAL"){
-
+        console.log("From meal if")
         return {
             ...state,
-            mealorder:action.mealorder
+            mealorder:[...state.mealorder,action.title]
         }
     }
 

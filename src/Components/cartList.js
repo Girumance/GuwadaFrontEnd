@@ -7,7 +7,7 @@ export default class CartList extends React.Component{
             return(
                 <div className="container-fluid">
                     <div className="row">
-                        <h3>Misto</h3>
+                        <h3>{this.props.title}</h3>
                          
                     </div>
 

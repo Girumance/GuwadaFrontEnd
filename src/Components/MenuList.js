@@ -21,7 +21,7 @@ import {connect} from "react-redux"
                
                this.props.addCart(action)
 
-               console.log("test")
+            
                
                
            }
@@ -38,12 +38,25 @@ import {connect} from "react-redux"
             
         }
 
-        
-           
-            
+        if(this.props.cusId==="none"){
+            let action={
+                   type:"ACTION_ADDCUS",
+                   customerId:"1234"
+               }
+               
+               this.props.addCart(action)
+   
+               
+               
+           }
 
-        console.log("kit id:"+this.props.kitId)
-        console.log("cus id:"+this.props.cusId) 
+
+           let meal={
+            type:"ACTION_ADDMEAL",
+            title:this.props.menu.title
+           }
+
+           this.props.addCart(meal);
 
     }
 
@@ -79,7 +92,8 @@ const mapStateToProps=(state) => {
 
 return {
     cusId:state.customerId,
-    kitId:state.kitchenId
+    kitId:state.kitchenId,
+    meal:state.mealorder
 }
 }
 

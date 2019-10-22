@@ -9,6 +9,27 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min"
 
 export default class Dashboard extends React.Component{
 
+    constructor(){
+        super()
+        this.AddKMenu=this.AddKMenu.bind(this)
+        this.ShowMenu=this.ShowMenu.bind(this);
+        this.state={
+            currentDisplay:null
+        }
+    }
+
+    AddKMenu(){
+        this.setState({
+            currentDisplay:<AddKMenu/>
+        })
+    }
+
+    ShowMenu(){
+        this.setState({
+            currentDisplay: <ShowMenuWrapper/>
+        })
+    }
+
 render(){
     return(
         <div className="dashboard">
@@ -24,11 +45,11 @@ render(){
                     
                         </tr>
                         <tr>
-                         <td><Link to="/addMenu">Add Menu</Link></td>   
+                         <td onClick={this.AddKMenu}> Add Menu </td>   
                         </tr>
 
                         <tr>
-                         <td><Link to="/showMenu">Show Menu</Link></td>   
+                         <td  onClick={this.ShowMenu}> Show Menu</td>   
                         </tr>
 
                         <tr>
@@ -45,13 +66,9 @@ render(){
 
                     <div className="col-md-10">
 
-                    <Switch>
-                        <Route path="/addMenu" component={AddKMenu} exact/>
-                        <Route path="/" component={Order} exact/>
-                        <Route path="/showMenu" component={ShowMenuWrapper} exact/>
-                    
-                    </Switch>
-                            
+                   {
+                       this.state.currentDisplay
+                   }
                     
 
                     </div>

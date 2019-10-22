@@ -11,7 +11,7 @@ import KitchenWrapper from './Components/KitchenWrapper';
 import Restaurants from './Components/Restaurants';
 import Kitchen from './Components/Kitchen';
 import KitchenDetails from './Components/KitchenDetails';
-
+import Dashboard from "./Components/Dashboard"
 
 function App() {
 
@@ -31,13 +31,11 @@ function App() {
   return (
     <div className="App">
       <Navigation/>
-    
       <BrowserRouter>
       <Route path="/" component={Home} exact/>
       <Route path="/Resturants" component={Restaurants} exact />
       <Route path="/Kitechen/:id" component={KitchenDetails} exact/>
-        
-      
+      <Route path="/dashboard" component={Dashboard}/>
       </BrowserRouter>
       <Footer/>
       

@@ -1,7 +1,8 @@
 import React from "react"
 import icon from "../IMG/cartIcon.png"
 import CartList from "./cartList"
-export default class Cart extends React.Component{
+import { connect } from "react-redux";
+class Cart extends React.Component{
 
     render(){
         return(
@@ -20,10 +21,15 @@ export default class Cart extends React.Component{
 
     <table>
 
-        <tr>
-            <td><CartList/></td>
-        </tr>
 
+                {
+
+                    this.props.mealorder.map( (title) => <tr>  <td><CartList title={title}/></td> </tr> )
+                }
+
+
+
+        
     </table>
 
 </div>
@@ -34,3 +40,13 @@ export default class Cart extends React.Component{
     }
 
 }
+
+const mapStateToProps = (state) =>{
+
+return {
+    mealorder:state.mealorder
+}
+
+}
+
+export default connect(mapStateToProps) (Cart)
