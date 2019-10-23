@@ -1,37 +1,71 @@
 import React from "react"
 import TableRow from "./TableRow"
+import Axios from "axios";
+import MenuModal from "./MenuModal"
+import { connect } from "react-redux";
+import DispalyCustomer from "./DispalyCustomer";
 
-export default class Order extends React.Component{
+ class Order extends React.Component{
+    constructor(){
+        super()
+        this.state={
+            orders:[],
+            modal:null
+        }
+        
+        this.onClick=this.onClick.bind(this)
+
+    }
+
+         componentDidMount(){
+            Axios.get("http://localhost:1234/order/kitchenorder/5da4dd989f083c428ca0d3e4").then( res => {
+                this.setState({
+                    orders:res.data
+                })
+
+            });
+    }
+
+    onClick(){
+        
+            
+    }
+
+
+
     render(){
         return( 
             <div className="order">
+                {this.props.modal}
                 <div className="col-md-12">
-                <table className="table table-bordered">
-                    <tr>
-                        <th>Title</th>
-                        <th>Quantity</th>
-                        <th>Additional Info</th>
-                        <th>Date & Time</th>
-                    </tr>
+                <div className="row">
+                    {
+                        this.state.orders.map( (order,index)  =>  <DispalyCustomer order={order} key={index}/> )
 
-                    <TableRow/>
-                    <TableRow/>
-                    <TableRow/>
-                    <TableRow/>
-                    <TableRow/>
-                    <TableRow/>
-                    <TableRow/>
-                    <TableRow/>
-                    <TableRow/>
-                    <TableRow/>
-                    <TableRow/>
-                    <TableRow/>
-                    <TableRow/>
-
-                </table>
+                    }
+                    </div>
                 </div>
 
             </div>
         );
     }
 }
+
+const mapStateToProps = (state) => {
+
+    return {
+        modal:state.menuModal
+    }
+}
+
+
+const mapDispatcherToProps = (dispatch) => {
+
+    return {
+        addModal: (action) => {
+                dispatch(action)
+        } 
+    }
+}
+
+export default connect(mapStateToProps,mapDispatcherToProps) (Order)

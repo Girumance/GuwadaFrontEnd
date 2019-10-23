@@ -12,7 +12,8 @@ export default class Dashboard extends React.Component{
     constructor(){
         super()
         this.AddKMenu=this.AddKMenu.bind(this)
-        this.ShowMenu=this.ShowMenu.bind(this);
+        this.ShowMenu=this.ShowMenu.bind(this)
+        this.pendingOrder=this.pendingOrder.bind(this)
         this.state={
             currentDisplay:null
         }
@@ -30,10 +31,19 @@ export default class Dashboard extends React.Component{
         })
     }
 
+    pendingOrder(){
+
+        this.setState({
+            currentDisplay: <Order/>
+        })
+
+
+    }
+
 render(){
     return(
         <div className="dashboard">
-            <DispalyCustomer/>
+            
     <div className="container">
             <div className="row">
                 
@@ -53,7 +63,7 @@ render(){
                         </tr>
 
                         <tr>
-                         <td>Pending Orders</td>   
+                         <td onClick={this.pendingOrder}>Pending Orders</td>   
                         </tr>
 
 

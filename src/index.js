@@ -7,13 +7,16 @@ import {createStore, combineReducers} from "redux"
 import {Provider} from "react-redux"
 import LoginReducer from "./Reducers/LoginReducer"
 import Kitchen from './Components/Kitchen';
+import MenuModal from './Components/MenuModal';
 
 let state={
     isLoggedIn:false,
     kitechen:{},
     customerId:"none",
     kitchenId:"no",
-    mealorder:[]
+    mealorder:[],
+    orderid:null,
+    menuModal:null
 
     }
  

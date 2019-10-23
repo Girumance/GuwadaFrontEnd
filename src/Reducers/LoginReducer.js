@@ -1,3 +1,4 @@
+import MenuModal from "../Components/MenuModal"
 
 
 
@@ -41,10 +42,26 @@ const LoginReducer=(state={},action) =>{
    
 
     else if(action.type==="ACTION_ADDMEAL"){
-        console.log("From meal if")
+        
         return {
             ...state,
             mealorder:[...state.mealorder,action.title]
+        }
+    }
+
+    else if(action.type==="ACTION_ADDMEALMODAL"){
+        console.log("add meal")
+        return {
+            ...state,
+            menuModal:action.menuModal
+        }
+    }
+
+    else if(action.type==="ACTION_REMOVEMEALMODAL"){
+        console.log("remove")
+        return {
+            ...state,
+            menuModal:null
         }
     }
 
