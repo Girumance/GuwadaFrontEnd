@@ -65,6 +65,14 @@ const LoginReducer=(state={},action) =>{
         }
     }
 
+    else if(action.type==="ACTION_LGCOMP"){
+        console.log("login reducer")
+        return {
+            ...state,
+            logincomp:action.lgcomp
+        }
+    }
+
 
     
     return state;

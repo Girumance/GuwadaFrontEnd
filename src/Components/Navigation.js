@@ -1,24 +1,26 @@
 import React from "react"
 import Login from "./Login"
-export default class Navigaton extends React.Component{
+import { connect } from "react-redux";
+
+ class Navigaton extends React.Component{
 
   constructor(){
     super();
     
     this.state={
-      loginClicked:false
+      loginClicked:false,
+      comp:null
     }
 
     this.loginHandler=this.loginHandler.bind(this);
   }
 
   loginHandler(){
-    this.setState({
-      loginClicked:!this.state.loginClicked
-    });
-
-    console.log("log:"+this.state.loginClicked)
-
+    let action={
+      type:"ACTION_LGCOMP",
+      lgcomp:<Login/>
+    }
+   
   
     
   }
@@ -27,16 +29,16 @@ export default class Navigaton extends React.Component{
     render(){
         return(
 
-            <nav class="navbar navbar-expand-md Navigation-color fixed-top"> 
+            <nav class="navbar navbar-expand-md navbar-dark Navigation-color fixed-top"> 
             <a class="navbar-brand" href="#">Guwada</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon "></span>
             </button>
           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="#"> <span className="fa fa-home Nav-Icon"></span>Home <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item">
@@ -66,4 +68,22 @@ export default class Navigaton extends React.Component{
         );
     }
 }
+
+const mapStateToProps=(state) =>{
+
+  return {
+      logincomp:state.logincomp
+  }
+}
+
+const maspDispacherToProps= (dispacher) =>{
+
+  return {
+      Login: (action) => {
+          dispacher(action)
+      }
+  }
+}
+
+export default connect(mapStateToProps,maspDispacherToProps) (Navigaton)
 

@@ -1,9 +1,11 @@
 import React from 'react';
 import Navigation from "./Components/Navigation"
 import './style.css';
-import "./bootstrap.min.css"
-
-
+//import "./bootstrap.min.css"
+import "jquery/dist/jquery"
+import "bootstrap/dist/js/bootstrap"
+import "bootstrap/dist/css/bootstrap.css"
+//import "./bootstrap.min.js"
 import Footer from './Components/Footer';
 import Home from "./Components/Home"
 import { BrowserRouter,Route} from 'react-router-dom/cjs/react-router-dom.min';
@@ -12,6 +14,8 @@ import Restaurants from './Components/Restaurants';
 import Kitchen from './Components/Kitchen';
 import KitchenDetails from './Components/KitchenDetails';
 import Dashboard from "./Components/Dashboard"
+import "font-awesome/css/font-awesome.css"
+
 
 function App() {
 
@@ -31,6 +35,7 @@ function App() {
   return (
     <div className="App">
       <Navigation/>
+      <div className="Navi"></div>
       <BrowserRouter>
       <Route path="/" component={Home} exact/>
       <Route path="/Resturants" component={Restaurants} exact />

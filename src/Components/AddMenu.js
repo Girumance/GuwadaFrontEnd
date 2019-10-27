@@ -9,7 +9,14 @@ export default class AddKMenu extends React.Component{
   constructor(){
     super();
     this.addMenu=this.addMenu.bind(this);
+    this.onChange=this.onChange.bind(this);
 
+  }
+
+  onChange(){
+    let image=this.refs.image.value;
+
+    console.warn("image:"+image)
   }
 
   addMenu(){
@@ -26,6 +33,8 @@ export default class AddKMenu extends React.Component{
         "price":price,
         "menuType":type
     }
+
+    
 
       axios.post("http://127.0.0.1:1234/kitechen/addMenu/5da4dd989f083c428ca0d3e4",data).then( res=>{
 
@@ -85,7 +94,7 @@ export default class AddKMenu extends React.Component{
 
                       <div class="form-group">
                         <label for="file">Picture</label>
-                        <input type="file" class="form-control" id="file" placeholder="Picture"/>
+                        <input type="file" class="form-control" id="file" placeholder="Picture" ref="image" onChange={this.onChange}/>
                         <small id="emailHelp" class="form-text text-muted">Upload a picture for your Menu!!</small>
                       </div>
 

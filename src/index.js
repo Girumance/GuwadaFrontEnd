@@ -16,7 +16,9 @@ let state={
     kitchenId:"no",
     mealorder:[],
     orderid:null,
-    menuModal:null
+    menuModal:null,
+    lscomp:null,
+    logincomp:null
 
     }
  

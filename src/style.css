@@ -12,8 +12,8 @@ color:#fff;
 }
 
 .Navigation-color{
-    background-color: #001970;
-    
+background-color: #001970;
+    color:#fff
     
 }
 
@@ -67,7 +67,7 @@ padding:10%;
 
 .Poster{
     height:70vh;
-    background-image: url("IMG/Farmhouse.jpg");
+    background-image: url("IMG/bg3.jpg");
     background-size: cover;
     position:relative;
     z-index: 0;
@@ -75,7 +75,7 @@ padding:10%;
 }
 
 .Poster-Shadow{
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.3);
     position:absolute;
     top:0;
     left:0;
@@ -94,11 +94,13 @@ padding:10%;
     width:55%;
     color:#fff;
     text-transform: capitalize;
-   
+    
     z-index: 2;
     padding:10px;
     transform: translate(-50%,-50%);
     font-family:serif;
+    border-radius: 8px;
+    
     
 }
 
@@ -125,10 +127,19 @@ padding:10%;
     max-height: 100%;
 }
 
-.card{
+/*.card{
     min-height: 30vh;
     margin-top:10%;
     Color:#333;
+}
+*/
+.card-img-top{
+    min-height: 50%;
+    max-height: 50%;
+}
+.card-style{
+height: 50vh;
+margin-top:10%;
 }
 
 .card-img-top{
@@ -209,6 +220,7 @@ color:#666;
 .cat{
     margin-top: 3%;
     position: relative;
+    opacity: 0.6;
 }
 
 
@@ -388,7 +400,82 @@ form{
  }
 
  .login{
-     position:absolute;
-     top:30%;
-     left:30%;
+    background-color: rgba(0,0,0, 0.3);
+    color:#fff;
+    width:50%;
+    border-radius: 15px;
+    
+    
+    
  }
+ 
+ 
+
+ .signup span{
+     margin-top:10px;
+    color:#fff;
+    font-family: serif;
+    cursor: pointer;
+ }
+
+ .logininputs input{
+
+    padding:10px;
+    border-bottom: 3px outset #fff;
+    margin:4px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    border-radius: 3px;
+    outline: none;
+    background-color: rgba(0,0,0,0.0);
+    color: #fff;
+    
+    
+
+ }
+
+
+ .logininputs input:focus{
+    border-bottom: 3px outset #ffd012;
+ }
+
+ .logininputs input::placeholder {
+
+    color:#fff;
+ }
+ .btn{
+    margin:10px; 
+ }
+
+ .loginSection hr{
+    margin-left:10%;
+    margin-right:10%;
+    background-color: whitesmoke;
+ }
+ 
+ .cut{
+    clip-path: polygon(23% 0, 100% 0, 100% 100%, 0% 100%);
+    background-image: url("IMG/ketefo.jpg");
+    background-size: cover;
+    z-index: 100;
+    opacity: 0.8;
+ }
+ .Navi{
+     height: 6vh;
+ }
+
+ .Nav-Icon{
+    color:#fff;
+
+ }
+
+ .Login-icon{
+     color: #fff;
+ }
+
+.copyRight{
+    background-color: #303f9f;
+    height: 5vh;
+}

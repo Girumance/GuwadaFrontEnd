@@ -6,8 +6,8 @@ export default class Services extends React.Component{
 
 render(){
     return(
-<div>
-        <div className="Service container-fluid">
+<div className="container-fluid">
+        <div className="Service">
         <div className="sshadow container-fluid">
             </div>
 

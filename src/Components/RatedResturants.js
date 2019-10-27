@@ -12,47 +12,79 @@ export default class RatedResturants extends React.Component{
             <div className="container ratedResuturant">
 
                 <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-xs-4">
 
-                    <div class="card">
+                    <div class="card card-style">
+
+                        
                         <img class="card-img-top" src={image1} alt="Card image cap"/>
+                    
+
 
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             
                         </div>
-                        <a href="#" class="btn btn-success">Open</a>
+                        <div className="row">
+                            <div className="col-md-8 col-xs-8">
+
+                            </div>
+
+                            <div className="col-md-4 col-xs-4">
+                            <a href="#" class="btn  btn-warning">Open</a>
+                            </div>
+
+                        </div>
+                        
                         </div>
 
                     </div>
                     
 
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-xs-4">
 
-                    <div className="card">
-                        <img class="card-img-top" src={image2} alt="Card image cap"/>
+                    <div className="card card-style">
+                        <img class="card-img-top img-fluid" src={image2} alt="Card image cap"/>
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             
                         </div>
-                        <a href="#" class="btn btn-success">Open</a>
+                        <div className="row">
+                            <div className="col-md-8 col-xs-8">
+
+                            </div>
+
+                            <div className="col-md-4 col-xs-4">
+                            <a href="#" class="btn  btn-warning">Open</a>
+                            </div>
+
+                        </div>
                         </div>
 
 
                     </div>
 
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-xs-4">
 
-                    <div className="card">
-                        <img class="card-img-top" src={image3} alt="Card image cap"/>
+                    <div className="card card-style">
+                        <img class="card-img-top " src={image3} alt="Card image cap"/>
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             
                         </div>
-                        <a href="#" class="btn btn-success">Open</a>
+                        <div className="row">
+                            <div className="col-md-8 col-xs-8">
+
+                            </div>
+
+                            <div className="col-md-4 col-xs-4">
+                            <a href="#" class="btn  btn-warning">Open</a>
+                            </div>
+
+                        </div>
                         </div>
 
 
