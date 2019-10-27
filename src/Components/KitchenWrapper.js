@@ -4,7 +4,7 @@ import Kitchen from "./Kitchen"
 export default class KitchenWrapper extends React.Component{
 
     render(){
-        console.log(this.props.kitchen)
+        
         return(
 
             
@@ -12,18 +12,19 @@ export default class KitchenWrapper extends React.Component{
             <div className="wrapper">
 
                 <table className="table">
+                    <tbody>
                    {
 
                      
 
-                this.props.kitchen.map( (kitchen,index) => <tr>
-                <td> <Kitchen key={index} kitchen={kitchen}/> </td>
+                this.props.kitchen.map( (kitchen,index) => <tr key={index}>
+                <td> <Kitchen kitchen={kitchen}/> </td>
                  </tr>)
 
                    } 
                    
                    
-                   
+                   </tbody>
                 </table>
 
             </div>

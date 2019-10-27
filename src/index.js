@@ -18,7 +18,8 @@ let state={
     orderid:null,
     menuModal:null,
     lscomp:null,
-    logincomp:null
+    logincomp:null,
+    account:{}
 
     }
  

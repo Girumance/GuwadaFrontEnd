@@ -16,8 +16,9 @@ class Login extends React.Component{
                 password:"",
 
                 comp:<div>
-                <input onChange={this.onUserName} placeholder="UserName" /><br />
-               <input onChange={this.onPassword} placeholder="password" /><br />
+            <span className="fa fa-user Nav-Icon"></span>      <input onChange={this.onUserName} placeholder="UserName" /><br />
+            <span className="fa fa-lock Nav-Icon"></span>    <input onChange={this.onPassword} placeholder="password" /><br />
+               
                <button  className="btn  btn-warning" onClick={this.loginHandler}>Login</button>
                </div> 
 
@@ -54,7 +55,7 @@ class Login extends React.Component{
 
     loginHandler(){
 
-        console.log(this.props)
+        
 
         let username=this.state.username
         let password=this.state.password
@@ -71,15 +72,26 @@ class Login extends React.Component{
 
 
         let data=res.data;
-                if(data.startsWith("Bearer")){
+
+        let action={
+            type:"ACTION_ADDACCOUNT",
+            account:data
+        }
+
+        this.props.Login(action)
+
+                if(data.password.startsWith("Bearer")){
                     this.props.Login({type:"ACTION_LOGIN"})
-                    console.log("val:"+this.props.isLoggedIn)
+                   
                     
                 }
                 
 
 
-        });
+        }).catch(error =>{
+            console.log("wrong username and password")
+        }  
+        );
 
 
     }
@@ -101,7 +113,7 @@ class Login extends React.Component{
             comp:<div> 
                 
       <span className="fa fa-user Nav-Icon"></span>      <input onChange={this.onUserName} placeholder="UserName" /><br />
-      <span className="fa fa-edit Nav-Icon"></span>  <input onChange={this.onPassword} type="password" placeholder="password" /><br />
+      <span className="fa fa-lock Nav-Icon"></span>  <input onChange={this.onPassword} type="password" placeholder="password" /><br />
            <button onClick={this.loginHandler} type="submit" className="btn  btn-warning" >Login</button>
           
            </div>
@@ -166,7 +178,8 @@ class Login extends React.Component{
                 <div className="col-md-7 col-sm-12 container-fluid login">
                     
                     {
-                        this.props.isLoggedIn==true ? <Redirect to="/Resturants" /> : ""
+                        (this.props.isLoggedIn==true ) ? (this.props.account.role=="USER") ? <Redirect to="/Resturants" /> : <Redirect to="/dashboard" /> : " "
+                        
 
                     }
                 
@@ -201,7 +214,8 @@ const mapStateToProps= (state) =>{
 
 return{
     isLoggedIn:state.isLoggedIn,
-    lscomp:state.lscomp
+    lscomp:state.lscomp,
+    account:state.account
 } 
 
 }

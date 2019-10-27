@@ -8,8 +8,8 @@ class Cart extends React.Component{
         return(
             <div>
             <div className="row">
-                <div className=" col-md-3">
-                 <img title="Add To Cart!" src={icon} className="img-fluid"/>
+                <div className=" col-md-2">
+                 <span className="fa fa-cart-arrow-down fa-lg fa-3x"></span>
                  </div>
                  <div className="col-md-9">
                     <p className="h3">My Cart</p>
@@ -17,18 +17,17 @@ class Cart extends React.Component{
                     
                 </div>
 
-<div className="cartArea">
+<div className="cartArea card">
 
     <table>
-
-
+     <tbody>
                 {
 
-                    this.props.mealorder.map( (title) => <tr>  <td><CartList title={title}/></td> </tr> )
+                    this.props.mealorder.map( (title,index) => <tr key={index}><td><CartList title={title}/></td></tr> )
                 }
 
 
-
+</tbody>
         
     </table>
 

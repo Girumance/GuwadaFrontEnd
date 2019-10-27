@@ -11,7 +11,7 @@ export default class About extends React.Component{
                   <div className="col-md-6 col-sm-6">
                       <div className="row">
                           <div className="col-md-8 text-right control-panel">
-                         <h3> Restaurant control panel </h3>
+                         <h3> Restaurant control </h3>
 <h5>Restaurant maintain business page by adding each menus from back end and customer order notified in front end.</h5>
                           </div>
 

@@ -75,9 +75,9 @@ import {connect} from "react-redux"
                 {this.props.menu.price} ETB
                 </div>
 
-                <div className="col-md-2">
-                    <div className="cartIcon">
-                     <img  onClick={this.addToCart} title="Add To Cart!" src={icon} className="img-fluid"/>
+                <div className="col-md-2 cartIcon">
+                    <div className="">
+                     <span onClick={this.addToCart} className="fa  fa-cart-plus fa-lg fa-2x">   </span> 
                 </div>
                 </div>
                 </div>

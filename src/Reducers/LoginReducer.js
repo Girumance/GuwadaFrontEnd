@@ -58,7 +58,7 @@ const LoginReducer=(state={},action) =>{
     }
 
     else if(action.type==="ACTION_REMOVEMEALMODAL"){
-        console.log("remove")
+        
         return {
             ...state,
             menuModal:null
@@ -66,10 +66,17 @@ const LoginReducer=(state={},action) =>{
     }
 
     else if(action.type==="ACTION_LGCOMP"){
-        console.log("login reducer")
+        
         return {
             ...state,
             logincomp:action.lgcomp
+        }
+    }
+
+    else if(action.type==="ACTION_ADDACCOUNT"){
+        return {
+            ...state,
+            account:action.account
         }
     }
 

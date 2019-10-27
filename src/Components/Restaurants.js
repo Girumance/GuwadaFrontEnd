@@ -37,18 +37,22 @@ import Axios from "axios";
             return(
                 <div className="container cat">
                     {
-                        this.props.isLoggedIn==false ? <Redirect to="/" /> : ""
-                        
+                        this.props.isLoggedIn==false ? <Redirect to="/" /> : ""       
 
                     }
                     <div className="row">
                         <div className="pos-fixed">
-                        <div className="col-md-3  catagory">
+                        <div className="col-md-3  col-sm-0 catagory hidden-lg-down">
                         
                            <table className="table ">
+                               <thead>
+                               <tr>
                                <th>
                                 Catagories
                                </th>
+                               </tr>
+                               </thead>
+                               <tbody>
                                <tr>
                                    <td>All</td>
                                </tr>
@@ -69,6 +73,7 @@ import Axios from "axios";
                                <tr>
                                    <td>Bars</td>
                                </tr>
+                               </tbody>
                            </table>
                         
                         </div>

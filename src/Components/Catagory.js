@@ -11,7 +11,8 @@ export default class Catagory extends React.Component{
             <div className="col-md-10">
 
                 <table className="table table-bordered"> 
-                    <tr><th>Catagory</th></tr>
+                <thead><tr><th>Catagory</th></tr></thead>
+                    <tbody>
                     <tr>
                         <td>Soda</td>
                     </tr>
@@ -35,6 +36,7 @@ export default class Catagory extends React.Component{
                     <tr>
                         <td>Pizza</td>
                     </tr>
+                    </tbody>
                 </table>
                 </div>
         

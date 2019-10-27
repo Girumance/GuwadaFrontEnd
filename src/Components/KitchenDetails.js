@@ -49,7 +49,7 @@ class KitchenDetails extends React.Component{
     render(){
        
     
-        console.log(this.state.kitechen.menu)
+        
         return(
             <div className="container banner">
             

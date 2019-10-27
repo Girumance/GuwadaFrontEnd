@@ -43,12 +43,12 @@ export default class Kitchen extends React.Component{
 
                             <div className="container-fluid">
                                 <div className="row">
-                                    <div className="col-md-4">
+                                    <div className="col-md-5 col-xs-4">
                                         <h2>{this.props.kitchen.title}</h2>
                                     </div>
 
-                                    <div className="col-md-8">
-
+                                    <div className="col-md-4 col-xs-4">
+                                        <h6 className="badge badge-warning">{this.props.kitchen.type}</h6>
                                     </div>
 
                                 </div>

@@ -38,14 +38,14 @@ componentDidMount(){
             <div className="row">
                 <h3>Dishes</h3>
                 <table className="table">
-                       
+                       <tbody>
                     {
                         
-                      this.state.menu.map( (menu,index) => <tr><td><MenuList kid={this.props.id} key={index} menu={menu}/></td></tr> )    
+                      this.state.menu.map( (menu,index) => <tr  key={index}><td><MenuList kid={this.props.id} menu={menu}/></td></tr> )    
 
                     }                       
                    
-                    
+                   </tbody>
                  </table>
 
             </div>
