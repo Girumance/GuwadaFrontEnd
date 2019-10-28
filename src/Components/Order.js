@@ -18,7 +18,7 @@ import DispalyCustomer from "./DispalyCustomer";
     }
 
          componentDidMount(){
-            Axios.get("http://localhost:1234/order/kitchenorder/5da4dd989f083c428ca0d3e4").then( res => {
+            Axios.get("http://127.0.0.1:1234/order/kitchenorder/5da4dd989f083c428ca0d3e4").then( res => {
                 this.setState({
                     orders:res.data
                 })

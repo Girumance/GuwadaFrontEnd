@@ -45,7 +45,15 @@ const LoginReducer=(state={},action) =>{
         
         return {
             ...state,
-            mealorder:[...state.mealorder,action.title]
+            mealorder:[...state.mealorder,action.meal]
+        }
+    }
+
+    else if(action.type==="ACTION_ADDMEALARRAY"){
+        
+        return {
+            ...state,
+            mealorder:action.meal
         }
     }
 

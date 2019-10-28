@@ -18,7 +18,7 @@ import Axios from "axios";
 
     componentDidMount(){
 
-        Axios.get("http://localhost:1234/kitechen/getAll").then(res => {
+        Axios.get("http://127.0.0.1:1234/kitechen/getAll").then(res => {
             this.setState({
                 kitchen:res.data
             })

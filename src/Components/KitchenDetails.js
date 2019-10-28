@@ -12,7 +12,7 @@ class KitchenDetails extends React.Component{
         
     constructor(){
         super()
-
+        this.onCheckout=this.onCheckout.bind(this)
         this.state={
 
             kitechen:[]
@@ -25,7 +25,7 @@ class KitchenDetails extends React.Component{
     componentDidMount(){
 
        
-        let path="http://localhost:1234/kitechen/get/"+this.props.match.params.id;
+        let path="http://127.0.0.1:1234/kitechen/get/"+this.props.match.params.id;
         Axios.get(path).then(res =>{
 
             this.setState({
@@ -43,6 +43,22 @@ class KitchenDetails extends React.Component{
 
         this.props.AddKitchen(data)
 
+    }
+
+    onCheckout(){
+
+        if(this.props.meal.length<1)
+        return
+
+        let data={
+            customerId:this.props.account.id,
+            kitchenId:this.props.match.params.id,
+            mealorder:this.props.meal
+        }
+    
+        Axios.post("http://127.0.0.1:1234/order/save",data).then( res =>{
+            console.log(res)
+        })
     }
 
 
@@ -71,7 +87,7 @@ class KitchenDetails extends React.Component{
                             </div>
 
                             <div className="col-md-8">
-                                <h3><a className="btn btn-danger disabled">Closed</a> </h3>
+                                <h1 className="badge badge-danger">Closed</h1>
                                     
                             </div>
 
@@ -113,6 +129,8 @@ class KitchenDetails extends React.Component{
 
                     <div className="col-md-3 cartMargin">
                             <Cart/>
+
+                            <button onClick={this.onCheckout} className={this.props.meal.length>0 ? "btn  btn-primary btn-block " :"btn  btn-primary btn-block disabled"} >Check Out </button>
                     </div>
 
                 </div>
@@ -130,7 +148,9 @@ class KitchenDetails extends React.Component{
 const  mapStateToProps=(state) =>{
 
 return {
-    kit:state.kitechen
+    kit:state.kitechen,
+    meal:state.mealorder,
+    account:state.account
 }
 
 }

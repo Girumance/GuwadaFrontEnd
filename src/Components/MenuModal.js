@@ -12,7 +12,7 @@ import Axios from "axios";
         }
 
         componentDidMount(){
-            let path="http://localhost:1234/order/get/"+this.props.order.orderId;
+            let path="http://127.0.0.1:1234/order/get/"+this.props.order.orderId;
 
             Axios.get(path).then( res => {
 

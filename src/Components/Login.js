@@ -68,7 +68,7 @@ class Login extends React.Component{
                      
                  
 
-        Axios.post("http://localhost:1234/login",data).then(res=>{
+        Axios.post("http://127.0.0.1:1234/login",data).then(res=>{
 
 
         let data=res.data;
@@ -88,10 +88,13 @@ class Login extends React.Component{
                 
 
 
-        }).catch(error =>{
+        })
+        
+        
+        /*.catch(error =>{
             console.log("wrong username and password")
         }  
-        );
+        );*/
 
 
     }

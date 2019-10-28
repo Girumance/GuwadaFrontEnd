@@ -1,10 +1,11 @@
 import React from "react"
 import axios from "axios"
+import { connect } from "react-redux";
 
 
 
 
-export default class AddKMenu extends React.Component{
+ class AddKMenu extends React.Component{
 
   constructor(){
     super();
@@ -35,7 +36,7 @@ export default class AddKMenu extends React.Component{
     }
 
     
-
+      let path="http://127.0.0.1:1234/kitechen/addMenu/"+this.props.account.id
       axios.post("http://127.0.0.1:1234/kitechen/addMenu/5da4dd989f083c428ca0d3e4",data).then( res=>{
 
           console.log(res.data);
@@ -108,3 +109,11 @@ export default class AddKMenu extends React.Component{
     }
 
 }
+const mapStateToProps= (state) =>{
+
+  return {
+    account:state.account
+  }
+}
+
+export default connect(mapStateToProps) (AddKMenu)

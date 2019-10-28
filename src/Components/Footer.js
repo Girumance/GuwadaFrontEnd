@@ -5,16 +5,16 @@ import React from "react"
     render(){
         return (
 
-            <div className="Footer">
+            <div className="Footer container-fluid">
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-3">
+                            <div className="col-md-3 col-xs-3">
 
                                 <h2>Questions?</h2>
                                 <p>Want to know more about us or have a question? Read our FAQ's (Frequently Asked Questions) or contact us!</p>
                             </div>
 
-                            <div className="col-md-3">
+                            <div className="col-md-3 col-xs-3">
 
                            <h3>FAQ</h3>
 <p>Before calling or sending an e-mail, read our FAQs to see if we've already answered your question.</p>
@@ -22,12 +22,12 @@ import React from "react"
                             </div>
 
 
-                            <div className="col-md-3">
+                            <div className="col-md-3 col-xs-3">
                           <h3>  Own a restaurant? </h3>
 <p>If you own a restaurant and would like to reach more customers, learn more about how to partner with us.</p>
                             </div>
 
-                            <div className="col-md-3">
+                            <div className="col-md-3 col-xs-3">
 
                            <h4>Get In Touch With US</h4>
                                 

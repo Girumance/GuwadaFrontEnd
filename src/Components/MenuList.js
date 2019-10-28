@@ -38,22 +38,13 @@ import {connect} from "react-redux"
             
         }
 
-        if(this.props.cusId==="none"){
-            let action={
-                   type:"ACTION_ADDCUS",
-                   customerId:"1234"
-               }
-               
-               this.props.addCart(action)
-   
-               
-               
-           }
-
-
+            let mealDetails={
+            title:this.props.menu.title,
+            quantitiy:1
+            }
            let meal={
             type:"ACTION_ADDMEAL",
-            title:this.props.menu.title
+            meal:mealDetails
            }
 
            this.props.addCart(meal);

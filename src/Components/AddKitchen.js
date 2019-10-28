@@ -1,6 +1,7 @@
 import React from "react"
 import axios from "axios"
-export default class AddKitchen extends React.Component{
+import { connect } from "react-redux";
+class AddKitchen extends React.Component{
 
   constructor(){
     super();
@@ -18,7 +19,8 @@ export default class AddKitchen extends React.Component{
         let data={
           "title":title,
           "descriptioin":desc,
-          "type":type
+          "type":type,
+          "ownerId":this.props.account.id
         }
 
         axios.post("http://127.0.0.1:1234/kitechen/save",data).then(res=>{
@@ -33,11 +35,11 @@ export default class AddKitchen extends React.Component{
     render(){
         return(
            
-            <div className="container">
-               <div className="setMargin">
+            <div className="container addKit ">
+               
   
                 
-                <h3>Create Your Kitchen!</h3>
+                <h2>Create Your Kitchen!</h2>
                       <div className="form-group">
                         <label for="exampleInputEmail1">Title</label>
                         <input type="text" className="form-control"  aria-describedby="Add title" placeholder="Title" ref="title"/>
@@ -71,18 +73,23 @@ export default class AddKitchen extends React.Component{
 
 
 
-                      <div className="form-group form-check">
-                      <label class="form-check-label" for="from">From</label>
-                        <input type="time" class="form-check-input" id="from"/>
+                      
                        
-                      </div>
+                      
                       <button onClick={this.onSubmit}  class="btn btn-primary">Create</button>
                
 
               </div>
-              </div>
+            
                           
         );
     }
 
 }
+const mapStateToProps= (state) => {
+  return {
+    account:state.account
+  }
+}
+
+export default connect(mapStateToProps) (AddKitchen)

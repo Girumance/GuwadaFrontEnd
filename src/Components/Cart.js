@@ -23,7 +23,7 @@ class Cart extends React.Component{
      <tbody>
                 {
 
-                    this.props.mealorder.map( (title,index) => <tr key={index}><td><CartList title={title}/></td></tr> )
+                    this.props.mealorder.map( (meal,index) => <tr key={index}><td><CartList meal={meal}/></td></tr> )
                 }
 
 
