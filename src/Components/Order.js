@@ -18,7 +18,10 @@ import DispalyCustomer from "./DispalyCustomer";
     }
 
          componentDidMount(){
-            Axios.get("http://127.0.0.1:1234/order/kitchenorder/5da4dd989f083c428ca0d3e4").then( res => {
+             let path="http://127.0.0.1:1234/order/kitchenorder/"+this.props.kitchenId;
+
+             console.log("path:"+path)
+            Axios.get(path).then( res => {
                 this.setState({
                     orders:res.data
                 })
@@ -54,7 +57,8 @@ import DispalyCustomer from "./DispalyCustomer";
 const mapStateToProps = (state) => {
 
     return {
-        modal:state.menuModal
+        modal:state.menuModal,
+        kitchenId:state.kitchenId
     }
 }
 

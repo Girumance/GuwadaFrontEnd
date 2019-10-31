@@ -19,7 +19,7 @@ constructor(props){
 
 
 componentDidMount(){
-    let path="http://127.0.0.1:1234/kitechen/getmenu/"+this.props.id
+    let path="http://127.0.0.1:1234/kitechen/getrealmenu/"+this.props.id
 
     Axios.get(path).then( res => {
 

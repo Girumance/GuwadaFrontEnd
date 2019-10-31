@@ -1,4 +1,5 @@
 import MenuModal from "../Components/MenuModal"
+import { connect } from "react-redux"
 
 
 
@@ -58,7 +59,7 @@ const LoginReducer=(state={},action) =>{
     }
 
     else if(action.type==="ACTION_ADDMEALMODAL"){
-        console.log("add meal")
+        
         return {
             ...state,
             menuModal:action.menuModal
@@ -87,6 +88,15 @@ const LoginReducer=(state={},action) =>{
             account:action.account
         }
     }
+
+    else if(action.type==="ACTION_MENUS"){
+        
+        return {
+            ...state,
+            menus:action.menus
+        }
+    }
+
 
 
     

@@ -10,6 +10,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min"
 import DashboardShow from "./DashboardShow"
 import Axios from "axios"
 import { connect } from "react-redux"
+import { NavLink, HashRouter,withRouter } from "react-router-dom/cjs/react-router-dom"
 
  class Dashboard extends React.Component{
 
@@ -30,11 +31,21 @@ import { connect } from "react-redux"
 
     componentDidMount(){
         let path="http://127.0.0.1:1234/kitechen/isKitchen/"+this.props.account.id
-        Axios.get("http://127.0.0.1:1234/kitechen/isKitchen/5da4dd989f083c428ca0d3e").then( res => {
+
+        console.log("id"+this.props.account.id)
+        Axios.get(path).then( res => {
+            let action={
+                type:"ACTION_ADDKIT",
+                kitchenId:res.data
+            }
+
+            this.props.dispatch(action)
 
             this.setState({
                 AddKitchen:res.data
             })
+
+
                 
         })
     }
@@ -67,6 +78,9 @@ import { connect } from "react-redux"
 
 render(){
 
+    if(!this.props.isLoggedIn)
+    this.props.history.push("/")
+
     console.log(this.state.AddKitchen)
     return(
         <div className="dashboard">
@@ -83,11 +97,11 @@ render(){
                         </tr>
 
                         {
-                            this.state.AddKitchen===false ? <tr onClick={this.AddKitchen}><th>Add Kitchen</th> </tr>  :""
+                            this.state.AddKitchen==false ? <tr onClick={this.AddKitchen}><th>Add Kitchen</th> </tr>  :""
                         
                         }
                         <tr>
-                         <th onClick={this.AddKMenu}> Add Menu </th>   
+                         <th onClick={this.AddKMenu}>  Add Menu  </th>   
                         </tr>
 
                         <tr>
@@ -110,8 +124,7 @@ render(){
 
                    {
                        this.state.currentDisplay
-                   }
-                    
+                   } 
 
                     </div>
                     </div>
@@ -129,8 +142,17 @@ render(){
 }
 const mapStateToProps= (state) =>{
     return {
-        account:state.account
+        account:state.account,
+        isLoggedIn:state.isLoggedIn
     }
 }
 
-export default connect(mapStateToProps) (Dashboard)
+const mapDispacherToProps= (dispacher) =>{
+    return{
+        dispatch: (action) =>{
+                dispacher(action)
+        }
+    }
+}
+
+export default connect(mapStateToProps,mapDispacherToProps) ( withRouter(Dashboard))

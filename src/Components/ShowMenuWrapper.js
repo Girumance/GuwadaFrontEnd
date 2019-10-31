@@ -1,23 +1,31 @@
 import React from "react"
 import ShowMenu from "./ShowMenu"
 import Axios from "axios";
+import { connect } from "react-redux";
 
-export default class ShowMenuWrapper extends React.Component{
+class ShowMenuWrapper extends React.Component{
         constructor (){
                 super();
 
-                this.setState={
+                this.state={
                         menus:[]
                 }
+                
         }
 
         componentDidMount(){
-                Axios.get().then( res =>{
+                let path="http://localhost:1234/kitechen/getmenu/"+this.props.account.id;
+                Axios.get(path).then( res =>{
                         
-                        this.setState({
+                        let action={
+                        
+                                type:"ACTION_MENUS",
                                 menus:res.data
-                        })
-                })
+                        }
+
+                        this.props.dispach(action)
+                
+                })    
         }
 
     render(){
@@ -27,7 +35,7 @@ export default class ShowMenuWrapper extends React.Component{
             <div className="row">
                 
                 {
-                        this.state.map( (menu,index) => <div key={index} className="col-md-4"> <ShowMenu menu={menu}/>  </div>)
+                 this.props.menus.map( (menu,index) => <div key={index} className="col-md-4"> <ShowMenu  menu={menu}/>  </div>)
                 }
                 
 
@@ -37,3 +45,22 @@ export default class ShowMenuWrapper extends React.Component{
         );
     }
 }
+
+const mapStateToProps= (state) => {
+
+        return {
+        menus:state.menus,
+        account:state.account
+        }
+}
+
+const mapDispacherToProps= (dispacher) =>{
+
+      return {
+        dispach: (action) =>{
+                dispacher(action)
+        }
+}
+}
+
+export default connect(mapStateToProps,mapDispacherToProps) (ShowMenuWrapper)

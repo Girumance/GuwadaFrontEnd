@@ -6,17 +6,20 @@ import Catagory from "./Catagory"
 import Axios from "axios"
 import { connect } from "react-redux"
 
-var kit={"girum":{"fd":"Girum"},"kal":"kal"};
+
 
 class KitchenDetails extends React.Component{
         
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.onCheckout=this.onCheckout.bind(this)
         this.state={
 
-            kitechen:[]
+            kitechen:[],
+            image:[]
         }
+        if(!this.props.isLoggedIn)
+            this.props.history.push("/")
        
         
        
@@ -33,6 +36,13 @@ class KitchenDetails extends React.Component{
                 kitechen:res.data
             });
 
+            let action={
+                type:"ACTION_ADDMEALARRAY",
+                meal:[]
+            }
+
+            this.props.AddKitchen(action)
+
 
         })
         
@@ -40,6 +50,16 @@ class KitchenDetails extends React.Component{
             type:"ACTION_ADDKIT",
             kit:this.state.kitechen
         }
+
+
+        Axios.get("http://localhost:1234/image/download").then(res => {
+            this.setState({
+                image:res.data
+            })
+
+            console.log(res.data)
+
+        })
 
         this.props.AddKitchen(data)
 
@@ -63,7 +83,7 @@ class KitchenDetails extends React.Component{
 
 
     render(){
-       
+        
     
         
         return(
@@ -71,7 +91,7 @@ class KitchenDetails extends React.Component{
             
                 <div className="row">
                     <div className="col-md-4 ">
-                        <img className="img-fluid thumbnails" src={image}/>
+                        <img className="img-fluid thumbnails" src={this.state.image}/>
                     </div>
 
                     <div className="col-md-8">
@@ -150,7 +170,8 @@ const  mapStateToProps=(state) =>{
 return {
     kit:state.kitechen,
     meal:state.mealorder,
-    account:state.account
+    account:state.account,
+    isLoggedIn:state.isLoggedIn
 }
 
 }

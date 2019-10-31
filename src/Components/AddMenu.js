@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 
 
- class AddKMenu extends React.Component{
+class AddKMenu extends React.Component{
 
   constructor(){
     super();
@@ -37,15 +37,18 @@ import { connect } from "react-redux";
 
     
       let path="http://127.0.0.1:1234/kitechen/addMenu/"+this.props.account.id
-      axios.post("http://127.0.0.1:1234/kitechen/addMenu/5da4dd989f083c428ca0d3e4",data).then( res=>{
+      axios.post(path,data).then( res=>{
 
-          console.log(res.data);
-
+      if(res.data==0){
+          console.log("Menu with the same title does exist")
+      }
+          
+        console.log("status code"+res.data)
       });
 
 
+}
 
-  }
 
     render(){
         return(
@@ -109,6 +112,7 @@ import { connect } from "react-redux";
     }
 
 }
+
 const mapStateToProps= (state) =>{
 
   return {

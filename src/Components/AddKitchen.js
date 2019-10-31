@@ -5,12 +5,38 @@ class AddKitchen extends React.Component{
 
   constructor(){
     super();
+
+    this.state={
+      image:[]
+    }
     this.onSubmit=this.onSubmit.bind(this);
+    this.onFile=this.onFile.bind(this)
+
+  }
+
+  onFile(e){
+    this.setState({
+      image:e.target.files[0]
+    })
+    console.log(e.target.files[0])
 
   }
 
 
     onSubmit(){
+
+      const formData=new FormData();
+      formData.append("photo",this.state.image,this.state.image.name)
+
+      axios.post("http://127.0.0.1:1234/image/upload",formData).then(res => {
+
+      console.log(res.data)
+      })
+        
+
+
+      return;
+
         let title=this.refs.title.value;
         let desc=this.refs.desc.value;
         let type=this.refs.type.value;
@@ -66,7 +92,7 @@ class AddKitchen extends React.Component{
 
                       <div className="form-group">
                         <label for="file">Picture</label>
-                        <input type="file" className="form-control" id="file" placeholder="Picture"/>
+                        <input type="file" onChange={this.onFile} className="form-control" id="file" placeholder="Picture"/>
                         <small id="emailHelp" className="form-text text-muted">Upload a picture for your kitchen!!</small>
                       </div>
 

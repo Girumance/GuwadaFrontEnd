@@ -282,6 +282,38 @@ font-family: serif;
 
 }
 
+.dropdown-menu {
+    background-color: #001970;
+}
+.dropdown i{
+    color:#AAA;
+    padding-right: 5px;
+}
+
+.dropdown-item i{
+    color:#fff;
+}
+
+.dropdown-item i:hover{
+        color:#303f9f;
+}
+
+
+.dropdown-menu .dropdown-item:hover{
+    background-color: #AAA;
+}
+
+
+.rememberMe{
+display: flex;
+padding: 10px;
+margin-left: 20%;
+}
+
+.rememberMe h6{
+    color: #ddd;
+}
+
 .addKit{
 font-family: serif;
 }
@@ -433,6 +465,29 @@ form{
  }
 
 
+ .logininputs select{
+
+    padding:10px;
+    border-bottom: 3px outset #fff;
+    margin:4px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width:100%;
+    border-radius: 3px;
+    outline: none;
+    background-color: rgba(0,0,0,0.0);
+    color: #fff;
+    margin-bottom: 10px;
+    
+    
+
+ }
+
+ .logininputs select:focus{
+    border-bottom: 3px outset #ffd012;
+ }
+
  .logininputs input:focus{
     border-bottom: 3px outset #ffd012;
  }
@@ -441,7 +496,9 @@ form{
 
     color:#fff;
  }
- .btn{
+ .btn{.logininputs input:focus{
+    border-bottom: 3px outset #ffd012;
+ }
     margin:10px; 
  }
 

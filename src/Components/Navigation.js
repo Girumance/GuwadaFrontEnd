@@ -1,8 +1,8 @@
 import React from "react"
 import Login from "./Login"
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom/cjs/react-router-dom";
+import { Link,withRouter } from "react-router-dom";
+import { BrowserRouter,Redirect } from "react-router-dom";
 
  class Navigaton extends React.Component{
 
@@ -10,11 +10,28 @@ import { BrowserRouter } from "react-router-dom/cjs/react-router-dom";
     super();
     
     this.state={
-      loginClicked:false,
+      logout:false,
       comp:null
     }
 
     this.loginHandler=this.loginHandler.bind(this);
+    this.onLogOut=this.onLogOut.bind(this)
+  }
+
+  onLogOut(){
+    localStorage.removeItem("username")
+    localStorage.removeItem("password")
+    this.setState({
+      logout:true
+    })
+
+    let action={
+      type:"ACTION_LOGOUT"
+    }
+
+    this.props.Login(action);
+  
+  
   }
 
   loginHandler(){
@@ -29,8 +46,15 @@ import { BrowserRouter } from "react-router-dom/cjs/react-router-dom";
 
 
     render(){
+
+      
+      
+      
         return(
             <BrowserRouter>
+            {
+             this.state.logout==true ? <Redirect to="/" /> : ""
+            }
             <nav className="navbar navbar-expand-md navbar-dark Navigation-color fixed-top"> 
             <a className="navbar-brand" href="#">Guwada</a>
             <button className="navbar-toggler white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,10 +75,22 @@ import { BrowserRouter } from "react-router-dom/cjs/react-router-dom";
                   <Link className="nav-link" to="#">About</Link>
                 </li>
 
-                <li className="nav-item">
-                  <Link className="nav-link" href="#" onClick={this.loginHandler} >Log in</Link>
+              {
+                
+                this.props.logincomp==true ?
+
+                <li className="nav-item dropdown">
+                  <Link className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" href="#" onClick={this.loginHandler} > <i className="fa fa-user-plus"></i>{this.props.account.firstName} </Link>
+                  <div className="dropdown-menu bg-secondary" aread-labelledby="navbarDropdown">
+                    <Link className="dropdown-item"> <i className="fa fa-gear "></i>    Profile</Link>
+                    <Link onClick={this.onLogOut} className="dropdown-item"><i className="fa fa-unlock-alt"></i>  Log Out</Link>
+
+                  </div>
+                
                 </li>
 
+                : ""
+              }
               </ul>
               <form className="form-inline my-2 my-lg-0">
                 <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
@@ -76,7 +112,8 @@ import { BrowserRouter } from "react-router-dom/cjs/react-router-dom";
 const mapStateToProps=(state) =>{
 
   return {
-      logincomp:state.logincomp
+      logincomp:state.isLoggedIn,
+      account:state.account
   }
 }
 
@@ -89,5 +126,5 @@ const maspDispacherToProps= (dispacher) =>{
   }
 }
 
-export default connect(mapStateToProps,maspDispacherToProps) (Navigaton)
+export default connect(mapStateToProps,maspDispacherToProps) (withRouter(Navigaton) )
 

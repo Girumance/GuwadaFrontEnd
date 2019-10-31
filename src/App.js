@@ -34,13 +34,15 @@ function App() {
    */
   return (
     <div className="App">
+       <BrowserRouter>
       <Navigation/>
       <div className="Navi"></div>
-      <BrowserRouter>
+     <switch>
       <Route path="/" component={Home} exact/>
       <Route path="/Resturants" component={Restaurants} exact />
       <Route path="/Kitechen/:id" component={KitchenDetails} exact/>
       <Route path="/dashboard" component={Dashboard}/>
+      </switch>
       </BrowserRouter>
       <Footer/>
       

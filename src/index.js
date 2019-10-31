@@ -19,7 +19,8 @@ let state={
     menuModal:null,
     lscomp:null,
     logincomp:null,
-    account:{}
+    account:{},
+    menus:[]
 
     }
  
