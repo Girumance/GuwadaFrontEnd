@@ -25,18 +25,16 @@ export default class Kitchen extends React.Component{
     }
 
     render(){
+
         let path="/Kitechen/"+this.props.kitchen.id
         return(
-            
 
-                
-        
                 <div onClick={this.clickHandler} className="container-fluid">
 
                 {(this.state.clicked==true) ? <Redirect to={path}/> : ""}    
                     <div className="row">
                         <div className="col-md-3">
-                                <img className="img-fluid" src={image} />
+                                <img className="img-fluid" src={`http://localhost:1234/image/download/${this.props.kitchen.id}`} />
                         </div>
 
                         <div className="col-md-8">

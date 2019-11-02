@@ -5,6 +5,8 @@ import Cart from "./Cart"
 import Catagory from "./Catagory"
 import Axios from "axios"
 import { connect } from "react-redux"
+import {Redirect} from "react-router-dom"
+import Rating from "./Rating"
 
 
 
@@ -52,14 +54,6 @@ class KitchenDetails extends React.Component{
         }
 
 
-        Axios.get("http://localhost:1234/image/download").then(res => {
-            this.setState({
-                image:res.data
-            })
-
-            console.log(res.data)
-
-        })
 
         this.props.AddKitchen(data)
 
@@ -87,11 +81,18 @@ class KitchenDetails extends React.Component{
     
         
         return(
+
+            
             <div className="container banner">
+                    {
+                        this.props.isLoggedIn==false ? <Redirect to="/" /> : ""       
+
+                     }
+                
             
                 <div className="row">
                     <div className="col-md-4 ">
-                        <img className="img-fluid thumbnails" src={this.state.image}/>
+                        <img className="img-fluid thumbnails" src={`http://localhost:1234/image/download/${this.props.match.params.id}`}/>
                     </div>
 
                     <div className="col-md-8">
@@ -103,12 +104,11 @@ class KitchenDetails extends React.Component{
                         </div>
                         <div className="row">
                             <div className="col-md-4">
-                                <h3>Rating ****</h3>
+                                <h3><Rating/></h3>
                             </div>
 
                             <div className="col-md-8">
                                 <h1 className="badge badge-danger">Closed</h1>
-                                    
                             </div>
 
                         </div>
@@ -155,12 +155,7 @@ class KitchenDetails extends React.Component{
 
                 </div>
             </div>
-
-
-
-
-
-           
+  
         );
     }
 }

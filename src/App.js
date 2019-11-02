@@ -15,6 +15,7 @@ import Kitchen from './Components/Kitchen';
 import KitchenDetails from './Components/KitchenDetails';
 import Dashboard from "./Components/Dashboard"
 import "font-awesome/css/font-awesome.css"
+import profile from "./Components/profile"
 
 
 function App() {

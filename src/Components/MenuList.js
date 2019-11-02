@@ -2,6 +2,7 @@ import React from "react"
 import icon from "../IMG/cartIcon.png"
 import {connect} from "react-redux"
 
+
  class MenuList extends React.Component{
 
     constructor(){
@@ -55,6 +56,7 @@ import {connect} from "react-redux"
     render(){
         return(
             <div className="container-fluid">
+                
             <div  className="row">
                  <div className="col-md-8">
                         <h4>{this.props.menu.title}</h4>
@@ -72,6 +74,7 @@ import {connect} from "react-redux"
                 </div>
                 </div>
                 </div>
+
             </div>
             
         );

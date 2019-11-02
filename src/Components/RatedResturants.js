@@ -2,6 +2,7 @@ import React from "react"
 import image1 from "../IMG/logo1.png"
 import image2 from "../IMG/logo2.jpg"
 import image3 from "../IMG/logo3.jpg"
+import { Paper } from "@material-ui/core";
 
 
 
@@ -13,7 +14,7 @@ export default class RatedResturants extends React.Component{
 
                 <div className="row">
                     <div className="col-md-4 col-xs-4">
-
+                <Paper>
                     <div class="card card-style">
 
                         
@@ -38,13 +39,13 @@ export default class RatedResturants extends React.Component{
                         </div>
                         
                         </div>
-
+                        </Paper>
                     </div>
                     
 
                     <div className="col-md-4 col-xs-4">
-
-                    <div className="card card-style">
+                        <Paper>
+                             <div className="card card-style">
                         <img class="card-img-top img-fluid" src={image2} alt="Card image cap"/>
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -63,11 +64,12 @@ export default class RatedResturants extends React.Component{
                         </div>
                         </div>
 
+                        </Paper>
 
                     </div>
 
                     <div className="col-md-4 col-xs-4">
-
+                    <Paper>
                     <div className="card card-style">
                         <img class="card-img-top " src={image3} alt="Card image cap"/>
                         <div class="card-body">
@@ -87,7 +89,7 @@ export default class RatedResturants extends React.Component{
                         </div>
                         </div>
 
-
+                        </Paper>
                     </div>
                 </div>
 

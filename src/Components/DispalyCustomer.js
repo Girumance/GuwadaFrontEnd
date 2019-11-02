@@ -47,7 +47,7 @@ import { connect } from "react-redux";
                 <div className="col-md-12">
                     
                     <h6><b>Name:</b>{this.props.order.customer.firstName}</h6>
-                    <h6><b>Phone:</b>{this.props.order.customer.lastName}</h6>
+                    <h6><b>Phone:</b>{this.props.order.customer.phoneNumber}</h6>
                     <h6><b>Email:</b>{this.props.order.customer.email}</h6>
                     <div className="row">
                     <div className="col-md-6"><h6><b>Block:</b>{this.props.order.customer.blockNumber}</h6></div><div className="col-md-6"><h6><b>Room No.:</b>{this.props.order.customer.roomNumber}</h6></div>

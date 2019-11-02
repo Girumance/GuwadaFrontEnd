@@ -322,7 +322,7 @@ font-family: serif;
 }
 .overflow{
     overflow: scroll;
-    background-color: #ddd;
+    background-color: #eee;
     min-height: 70%;
     max-height: 70%;
     padding: 5px;
@@ -496,12 +496,7 @@ form{
 
     color:#fff;
  }
- .btn{.logininputs input:focus{
-    border-bottom: 3px outset #ffd012;
- }
-    margin:10px; 
- }
-
+ 
  .loginSection hr{
     margin-left:10%;
     margin-right:10%;
@@ -580,3 +575,59 @@ display: none;
 
   }
   
+  .profile-banner{
+
+    height: 40vh;
+    background-image: url("IMG/bg1.jpg");
+    background-size: cover;
+  }
+
+  .profile-image{
+    margin-top: 3px;
+   border-radius: 8px;
+  }
+
+  .imageUpload{
+      
+      height:5vh;
+    border: 2px dashed #AAA;
+    padding:20px;
+      border-radius: 8px;;
+      
+  }
+
+  .imageUploadOuter{
+     border: 2px outset #666;
+        padding:10px;
+  }
+
+  .edit input{
+      margin-bottom: 10px;
+  }
+  .edit{
+      padding:50px;
+  }
+
+  .edit button{
+      margin:10px;
+  }
+
+  .changePassword input{ 
+      margin-top: 10px;
+      
+  }
+
+  .changePassword{
+    padding: 10px;
+  }
+
+  .changePassword button{
+      margin-top: 10px;
+  }
+  .profile{
+      height: 90vh;
+  }
+  .rated{
+    color: goldenrod;
+
+  }

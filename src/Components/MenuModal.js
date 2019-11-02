@@ -92,15 +92,17 @@ import Axios from "axios";
                         
                         
                     </div>
+            </div>
+            <div className="row text-right text-center">
+                    <div className="col-md-2">
+                    <button className="btn btn-success  btn-block">Delivered</button>
+                    </div>
 
-                
-
-                <div className="row text-right">
-                    <div className="col-md-12">
-                    <button className="btn btn-success ">Delivered</button>
+                    <div className="col-md-2">
+                    <button className="btn btn-danger btn-block">Delete</button>
                     </div>
                 </div>
-            </div>
+
             </div>
             </div>
             </div>

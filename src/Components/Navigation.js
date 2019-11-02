@@ -3,6 +3,7 @@ import Login from "./Login"
 import { connect } from "react-redux";
 import { Link,withRouter } from "react-router-dom";
 import { BrowserRouter,Redirect } from "react-router-dom";
+import { AppBar} from "@material-ui/core"
 
  class Navigaton extends React.Component{
 
@@ -51,6 +52,7 @@ import { BrowserRouter,Redirect } from "react-router-dom";
       
       
         return(
+          <AppBar>
             <BrowserRouter>
             {
              this.state.logout==true ? <Redirect to="/" /> : ""
@@ -102,6 +104,8 @@ import { BrowserRouter,Redirect } from "react-router-dom";
           </nav>
 
           </BrowserRouter>
+
+          </AppBar>
 
         );
     }

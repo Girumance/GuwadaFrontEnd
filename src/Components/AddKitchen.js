@@ -7,10 +7,12 @@ class AddKitchen extends React.Component{
     super();
 
     this.state={
-      image:[]
+      image:[],
+      kitId:""
     }
     this.onSubmit=this.onSubmit.bind(this);
     this.onFile=this.onFile.bind(this)
+    this.onImageUpload=this.onImageUpload.bind(this)
 
   }
 
@@ -24,19 +26,7 @@ class AddKitchen extends React.Component{
 
 
     onSubmit(){
-
-      const formData=new FormData();
-      formData.append("photo",this.state.image,this.state.image.name)
-
-      axios.post("http://127.0.0.1:1234/image/upload",formData).then(res => {
-
-      console.log(res.data)
-      })
-        
-
-
-      return;
-
+ 
         let title=this.refs.title.value;
         let desc=this.refs.desc.value;
         let type=this.refs.type.value;
@@ -51,12 +41,26 @@ class AddKitchen extends React.Component{
 
         axios.post("http://127.0.0.1:1234/kitechen/save",data).then(res=>{
 
-        console.log("return value:"+res.data);
+        if(res.data.length>1)
+        this.onImageUpload(res.data)
 
         });
+          this.onImageUpload();
+        
   
     }
 
+    onImageUpload(id){
+      const formData=new FormData();
+      formData.append("photo",this.state.image,this.state.image.name)
+
+      let path="http://127.0.0.1:1234/image/upload/"+id
+      
+      axios.post(path,formData).then(res => {
+
+      
+      })
+    }
 
     render(){
         return(

@@ -2,15 +2,17 @@ import React from "react"
 import image1 from "../IMG/cart.png"
 import image2 from "../IMG/location.png"
 import image3 from "../IMG/option.png"
+import { Paper } from "@material-ui/core"
 export default class Services extends React.Component{
 
 render(){
     return(
         <div>
+            <Paper>
 <div className="container-fluid Service">
       
         </div>
-
+        </Paper>
 
         <div className="container ser">
             <div className="row">
