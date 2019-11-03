@@ -1,7 +1,7 @@
 import React from "react"
 import image from "../IMG/Farmhouse.jpg"
-import {Redirect} from "react-router-dom"
-export default class Kitchen extends React.Component{
+import {Redirect,withRouter} from "react-router-dom"
+ class Kitchen extends React.Component{
 
 
     constructor(){
@@ -31,7 +31,7 @@ export default class Kitchen extends React.Component{
 
                 <div onClick={this.clickHandler} className="container-fluid">
 
-                {(this.state.clicked==true) ? <Redirect to={path}/> : ""}    
+                {(this.state.clicked==true) ? <Redirect from="/Resturants" to={path}/> : ""}    
                     <div className="row">
                         <div className="col-md-3">
                                 <img className="img-fluid" src={`http://localhost:1234/image/download/${this.props.kitchen.id}`} />
@@ -74,3 +74,5 @@ export default class Kitchen extends React.Component{
 
 
 }
+
+export default withRouter(Kitchen)

@@ -1,6 +1,7 @@
 import React from "react"
 import icon from "../IMG/cartIcon.png"
 import {connect} from "react-redux"
+import { Paper } from "@material-ui/core"
 
 
  class MenuList extends React.Component{
@@ -8,11 +9,15 @@ import {connect} from "react-redux"
     constructor(){
             super()
             this.addToCart=this.addToCart.bind(this)
+            this.state={
+                icon:""
+            }
     }
 
 
     addToCart(){
 
+        if(this.props.isLoggedIn && this.props.account.role=="USER"){
 
         if(this.props.kitId===undefined){
             let action={
@@ -49,12 +54,21 @@ import {connect} from "react-redux"
            }
 
            this.props.addCart(meal);
-
+        }
     }
 
+    componentDidMount(){
+        
+    }
 
     render(){
+        
+        
+
+        
+    
         return(
+            <Paper>
             <div className="container-fluid">
                 
             <div  className="row">
@@ -68,7 +82,7 @@ import {connect} from "react-redux"
                 {this.props.menu.price} ETB
                 </div>
 
-                <div className="col-md-2 cartIcon">
+                <div className={this.props.isLoggedIn && this.props.account.role=="USER" ? "col-md-2 cartIcon" :"col-md-2 cartIconDis"} >
                     <div className="">
                      <span onClick={this.addToCart} className="fa  fa-cart-plus fa-lg fa-2x">   </span> 
                 </div>
@@ -76,7 +90,7 @@ import {connect} from "react-redux"
                 </div>
 
             </div>
-            
+            </Paper>
         );
 
     }
@@ -87,7 +101,9 @@ const mapStateToProps=(state) => {
 return {
     cusId:state.customerId,
     kitId:state.kitchenId,
-    meal:state.mealorder
+    meal:state.mealorder,
+    isLoggedIn:state.isLoggedIn,
+    account:state.account
 }
 }
 

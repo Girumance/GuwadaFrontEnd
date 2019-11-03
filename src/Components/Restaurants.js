@@ -2,7 +2,7 @@ import React from "react";
 import Kitchen from "./Kitchen";
 import KitchenWrapper from "./KitchenWrapper";
 import { connect } from "react-redux";
-import {Redirect} from "react-router-dom"
+import {Redirect,withRouter} from "react-router-dom"
 import Axios from "axios";
  class Restaurants extends React.Component{
 
@@ -37,7 +37,7 @@ import Axios from "axios";
             return(
                 <div className="container cat">
                     {
-                        this.props.isLoggedIn==false ? <Redirect to="/" /> : ""       
+                        //this.props.isLoggedIn==false ? <Redirect to="/" /> : ""       
 
                     }
                     <div className="row">
@@ -105,4 +105,4 @@ const mapStateToProps= (store) => {
 
 }
 
-export default connect(mapStateToProps) (Restaurants);
+export default connect(mapStateToProps) (withRouter(Restaurants) );

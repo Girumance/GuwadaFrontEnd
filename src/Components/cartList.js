@@ -1,6 +1,7 @@
 import React from "react"
 import { connect } from "react-redux";
 import { elementType } from "prop-types";
+import { Paper } from "@material-ui/core";
 
  class CartList extends React.Component{
 
@@ -70,6 +71,7 @@ import { elementType } from "prop-types";
         render(){
 
             return(
+                <Paper>
                 <div className="container-fluid">
                 
 
@@ -89,6 +91,7 @@ import { elementType } from "prop-types";
                     </div>
                     <hr />
                 </div>
+                </Paper>
             );
         }
 }

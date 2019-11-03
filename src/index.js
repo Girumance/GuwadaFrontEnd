@@ -20,7 +20,10 @@ let state={
     lscomp:null,
     logincomp:null,
     account:{},
-    menus:[]
+    menus:[],
+    searchRes:[],
+    searchTitle:"",
+    kit:[]
 
     }
  

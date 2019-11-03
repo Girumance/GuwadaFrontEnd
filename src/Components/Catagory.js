@@ -1,4 +1,5 @@
 import React from "react"
+import { Paper } from "@material-ui/core";
 
 export default class Catagory extends React.Component{
 
@@ -7,10 +8,11 @@ export default class Catagory extends React.Component{
     render(){
         return(
 
+            <Paper>
             
             <div className="col-md-10">
 
-                <table className="table table-bordered"> 
+                <table className="table "> 
                 <thead><tr><th>Catagory</th></tr></thead>
                     <tbody>
                     <tr>
@@ -39,7 +41,7 @@ export default class Catagory extends React.Component{
                     </tbody>
                 </table>
                 </div>
-        
+                </Paper>
         );
     }
 }

@@ -251,6 +251,13 @@ font-family: serif;
 .topMargin{
     margin-top: 15px;
 }
+.cartIcon span{
+    color: #666;;
+}
+
+.cartIconDis span{
+    color:#ddd;
+}
 
 
 .cartIcon :hover{
@@ -337,7 +344,7 @@ border-radius: 3px;
 
 .discustomer{
 
-    background-color: #efefef;
+  /*background-color: #efefef;*/
     color: #fff;
     font-family: serif;
     height:35vh;
@@ -630,4 +637,36 @@ display: none;
   .rated{
     color: goldenrod;
 
+  }
+  .search{
+    position:relative
+  }
+
+  .search-res{
+    position:absolute;
+    width:97%;
+     
+  }
+
+  .searchResult{
+
+    margin:10px;
+    padding-left:10px;
+  }
+  .userLogin{
+    padding:10px;
+  }
+
+  .wrapper{
+      padding: 5%;
+      padding-top:15%;
+      font-family: serif;
+  }
+
+  .wrapper input{
+      margin-bottom: 10px;
+      margin-left: 3px;
+  }
+  .flex{
+      display:flex;
   }

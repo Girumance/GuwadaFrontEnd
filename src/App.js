@@ -34,21 +34,19 @@ function App() {
        <AddKMenu/>
    */
   return (
+
+    <BrowserRouter>
     <div className="App">
-       <BrowserRouter>
+       <div className="Navi"></div>
+     
       <Navigation/>
-      <div className="Navi"></div>
-     <switch>
       <Route path="/" component={Home} exact/>
       <Route path="/Resturants" component={Restaurants} exact />
       <Route path="/Kitechen/:id" component={KitchenDetails} exact/>
       <Route path="/dashboard" component={Dashboard}/>
-      </switch>
-      </BrowserRouter>
       <Footer/>
-      
-
     </div>
+    </BrowserRouter>
   );
 }
 

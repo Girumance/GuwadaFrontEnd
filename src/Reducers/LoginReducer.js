@@ -97,6 +97,33 @@ const LoginReducer=(state={},action) =>{
         }
     }
 
+    else if(action.type==="ACTION_ADDSEARCH"){
+        
+        return {
+            ...state,
+            searchRes:action.searchRes
+        }
+    }
+
+    else if(action.type==="ACTION_SEARTITLE"){
+        
+        
+        return {
+            ...state,
+            searchTitle:action.searchTitle
+        }
+    }
+
+    else if(action.type==="ACTION_ADDKITCHEN"){
+        
+        console.log("from addkit")
+        return {
+            ...state,
+            kit:action.kit
+        }
+    }
+
+
 
 
     

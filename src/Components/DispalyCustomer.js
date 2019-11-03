@@ -2,6 +2,7 @@ import React from "react"
 import icon from "../IMG/Anon.png"
 import MenuModal from "./MenuModal";
 import { connect } from "react-redux";
+import { Paper } from "@material-ui/core";
 
  class DispalyCustomer extends React.Component{
 
@@ -34,6 +35,8 @@ import { connect } from "react-redux";
 
     render(){
         return(
+
+            <Paper>
             
             <div className="col-md-4">
                 <div onClick={this.onClick} className="discustomer">
@@ -58,7 +61,7 @@ import { connect } from "react-redux";
             </div>
 
             </div>
-            
+            </Paper>
         );
     }
 }

@@ -2,10 +2,12 @@ import React from "react"
 import icon from "../IMG/cartIcon.png"
 import CartList from "./cartList"
 import { connect } from "react-redux";
+import { Paper } from "@material-ui/core";
 class Cart extends React.Component{
 
     render(){
         return(
+            <Paper>
             <div>
             <div className="row">
                 <div className=" col-md-2">
@@ -17,7 +19,7 @@ class Cart extends React.Component{
                     
                 </div>
 
-<div className="cartArea card">
+<div className="cartArea ">
 
     <table>
      <tbody>
@@ -34,6 +36,7 @@ class Cart extends React.Component{
 </div>
 
 </div>
+</Paper>
 
         );
     }
