@@ -36,9 +36,10 @@ import { Paper } from "@material-ui/core";
     render(){
         return(
 
-            <Paper>
+           
             
             <div className="col-md-4">
+                 <Paper>
                 <div onClick={this.onClick} className="discustomer">
                 <div className="col-md-12">
                     <div className="profile-icon ">
@@ -52,6 +53,8 @@ import { Paper } from "@material-ui/core";
                     <h6><b>Name:</b>{this.props.order.customer.firstName}</h6>
                     <h6><b>Phone:</b>{this.props.order.customer.phoneNumber}</h6>
                     <h6><b>Email:</b>{this.props.order.customer.email}</h6>
+                    
+
                     <div className="row">
                     <div className="col-md-6"><h6><b>Block:</b>{this.props.order.customer.blockNumber}</h6></div><div className="col-md-6"><h6><b>Room No.:</b>{this.props.order.customer.roomNumber}</h6></div>
                     </div>
@@ -59,9 +62,9 @@ import { Paper } from "@material-ui/core";
                 
             
             </div>
-
-            </div>
             </Paper>
+            </div>
+            
         );
     }
 }

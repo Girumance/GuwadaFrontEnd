@@ -17,17 +17,29 @@ import DispalyCustomer from "./DispalyCustomer";
 
     }
 
+        getData(){
+            let path="http://127.0.0.1:1234/order/kitchenorder/"+this.props.kitchenId;
+
+            console.log("path:"+path)
+           Axios.get(path).then( res => {
+               this.setState({
+                   orders:res.data
+               })
+
+           });
+        }
+
+
          componentDidMount(){
-             let path="http://127.0.0.1:1234/order/kitchenorder/"+this.props.kitchenId;
+            
+                this.getData();
 
-             console.log("path:"+path)
-            Axios.get(path).then( res => {
-                this.setState({
-                    orders:res.data
-                })
+                setInterval(e=>{
+                    this.getData()
 
-            });
-    }
+                },10000)
+            
+             }
 
     onClick(){
         
@@ -37,6 +49,7 @@ import DispalyCustomer from "./DispalyCustomer";
 
 
     render(){
+      
         return( 
             <div className="order">
                 {this.props.modal}

@@ -11,6 +11,7 @@ import DashboardShow from "./DashboardShow"
 import Axios from "axios"
 import { connect } from "react-redux"
 import { NavLink, HashRouter,withRouter } from "react-router-dom/cjs/react-router-dom"
+import { Paper } from "@material-ui/core"
 
  class Dashboard extends React.Component{
 
@@ -90,6 +91,8 @@ render(){
                 
                 <div className="col-md-2">
                 <div className="dashboard_menu">
+
+                    <Paper>
                     <table className="table table-bordere">
                         <tr>
                             <th>Dashboard</th>
@@ -117,6 +120,8 @@ render(){
                          <th>Delivered Orders</th>   
                         </tr>
                     </table>
+
+                    </Paper>
                     </div>
                     </div>
 

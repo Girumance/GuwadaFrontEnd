@@ -3,7 +3,7 @@ import Login from "./Login"
 import { connect } from "react-redux";
 import { Link,withRouter,NavLink } from "react-router-dom";
 import { BrowserRouter,Redirect } from "react-router-dom";
-import { AppBar, Paper} from "@material-ui/core"
+import { AppBar, Paper, Toolbar} from "@material-ui/core"
 import SearchResult from "./SearchResult"
 import Axios from "axios";
 
@@ -157,11 +157,13 @@ Axios.get(path).then( res=> {
          
           <AppBar>
             
+            
             {
              this.state.logout==true ? <Redirect to="/" /> : "" 
               
             }
             <nav className="navbar navbar-expand-md navbar-dark Navigation-color fixed-top"> 
+            
             <a className="navbar-brand" href="#">Guwada</a>
             <button className="navbar-toggler white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon "></span>
@@ -201,7 +203,7 @@ Axios.get(path).then( res=> {
                 <li className="nav-item dropdown">
                   <Link className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" href="#" onClick={this.loginHandler} > <i className="fa fa-user-plus"></i>{this.props.account.firstName} </Link>
                   <div className="dropdown-menu bg-secondary" aread-labelledby="navbarDropdown">
-                    <Link className="dropdown-item"> <i className="fa fa-gear "></i>    Profile</Link>
+                    <Link className="dropdown-item" to="/profile"> <i className="fa fa-gear "></i>    Profile</Link>
                     <Link onClick={this.onLogOut} className="dropdown-item"><i className="fa fa-unlock-alt"></i>  Log Out</Link>
 
                   </div>
@@ -235,11 +237,11 @@ Axios.get(path).then( res=> {
               
             </div>
 
-            
+           
           </nav>
 
          
-                
+         
           </AppBar>
 
         );

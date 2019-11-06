@@ -43,6 +43,7 @@ function App() {
       <Route path="/" component={Home} exact/>
       <Route path="/Resturants" component={Restaurants} exact />
       <Route path="/Kitechen/:id" component={KitchenDetails} exact/>
+      <Route path="/profile" component={profile}/>
       <Route path="/dashboard" component={Dashboard}/>
       <Footer/>
     </div>

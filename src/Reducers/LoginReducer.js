@@ -19,7 +19,8 @@ const LoginReducer=(state={},action) =>{
 
             return {
                 ...state,
-                isLoggedIn:!state.isLoggedIn
+                isLoggedIn:!state.isLoggedIn,
+                mealorder:[]
 
             }
 

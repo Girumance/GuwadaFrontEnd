@@ -3,6 +3,7 @@ import UserProfile from "./UserProfile"
 import EditProfile from "./EditProfile"
 import ChangePassword from "./ChangePassword"
 import { Paper } from "@material-ui/core"
+import { connect } from "react-redux"
 
 
 class profile extends React.Component{
@@ -45,7 +46,10 @@ class profile extends React.Component{
             </div>
 
             <div className="col-md-6">
-            <ChangePassword/>
+                
+            <EditProfile/>
+
+            
 
             </div>
 
@@ -62,5 +66,11 @@ class profile extends React.Component{
         )
     }
 }
+const mapStateToProps = (state) =>{
+    return {
+        account:state.account
+    }
 
-export default profile;
+}
+
+export default connect(mapStateToProps) (profile);
