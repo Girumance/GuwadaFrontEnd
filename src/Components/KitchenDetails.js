@@ -111,8 +111,9 @@ class KitchenDetails extends React.Component{
 
                      }
                 
-            
+                
                 <div className="row">
+               
                     <div className="col-md-4 ">
                         <Paper>
                         <img className="img-fluid thumbnails" src={`http://localhost:1234/image/download/${this.props.match.params.id}`}/>
@@ -155,8 +156,11 @@ class KitchenDetails extends React.Component{
                         
                     </div>
 
-
+                    
                 </div>
+               
+                <br />
+                <br />
                 <br />
 
                 <div className="row">

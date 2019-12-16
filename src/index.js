@@ -8,7 +8,8 @@ import {Provider} from "react-redux"
 import LoginReducer from "./Reducers/LoginReducer"
 import Kitchen from './Components/Kitchen';
 import MenuModal from './Components/MenuModal';
-
+import DashboardShow from "./Components/DashboardShow"
+import Uuid from "uuid/v4"
 let state={
     isLoggedIn:false,
     kitechen:{},
@@ -23,7 +24,15 @@ let state={
     menus:[],
     searchRes:[],
     searchTitle:"",
-    kit:[]
+    kit:[],
+    orders:[],
+    currentDisplay:<DashboardShow/>,
+    copyKit:[],
+    menuCat:[],
+    menu:[],
+    copyMenu:[],
+    catId:"",
+    allId:true
 
     }
  

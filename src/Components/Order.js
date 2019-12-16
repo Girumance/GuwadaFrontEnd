@@ -18,10 +18,33 @@ import DispalyCustomer from "./DispalyCustomer";
     }
 
         getData(){
-            let path="http://127.0.0.1:1234/order/kitchenorder/"+this.props.kitchenId;
+            let pending="http://127.0.0.1:1234/order/pending/"+this.props.kitchenId;
+            let onprocess="http://127.0.0.1:1234/order/onprocessorder/"+this.props.kitchenId;
+            let delivered="http://127.0.0.1:1234/order/deliveredorder/"+this.props.kitchenId;
+
+            let path="";
+            if(this.props.type==="pending")
+               path=pending;
+            
+            
+            else if(this.props.type==="onprocess")
+                path=onprocess;
+
+            else if(this.props.type==="delivered")
+                path=delivered;
+               
+            
+            
 
             console.log("path:"+path)
            Axios.get(path).then( res => {
+
+                let action={
+                    type:"ACTION_ADDORDERS",
+                    orders:res.data
+                }
+
+                this.props.addModal(action);
                this.setState({
                    orders:res.data
                })
@@ -32,14 +55,15 @@ import DispalyCustomer from "./DispalyCustomer";
 
          componentDidMount(){
             
-                this.getData();
-
+              this.getData();
+                 /* 
                 setInterval(e=>{
                     this.getData()
 
                 },10000)
-            
+             */
              }
+            
 
     onClick(){
         
@@ -56,7 +80,7 @@ import DispalyCustomer from "./DispalyCustomer";
                 <div className="col-md-12">
                 <div className="row">
                     {
-                        this.state.orders.map( (order,index)  =>  <DispalyCustomer order={order} key={index}/> )
+                        this.props.orders.map( (order,index)  =>  <DispalyCustomer order={order} key={index}/> )
 
                     }
                     </div>
@@ -71,7 +95,8 @@ const mapStateToProps = (state) => {
 
     return {
         modal:state.menuModal,
-        kitchenId:state.kitchenId
+        kitchenId:state.kitchenId,
+        orders:state.orders
     }
 }
 

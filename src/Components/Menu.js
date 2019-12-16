@@ -10,9 +10,6 @@ constructor(props){
 
     this.state={
         menu:[]
-        
-        
-
     }
 }
 
@@ -26,6 +23,46 @@ componentDidMount(){
         this.setState({
             menu:res.data
         })
+
+        let action1={
+            type:"ACTION_ADDMENU",
+            menu:res.data
+        }
+
+        this.props.dispatcher(action1)
+
+        let action2={
+            type:"ACTION_ADDCOPYMENU",
+            copyMenu:res.data
+        }
+        this.props.dispatcher(action2)
+        let menucat=[]
+
+        let isMenuCatAvaliable= (cat)=>{
+           let x=0;
+           for(;x<menucat.length;x++)
+           if(menucat[x]===cat)return true;
+
+            return false;
+    }
+
+        
+        res.data.map( menu => {
+
+            if(!isMenuCatAvaliable(menu.menuType))
+            menucat.push(menu.menuType)
+
+        
+        })
+
+
+
+        let  action ={
+            type:"ACTION_ADDMENUCAT",
+            menuCat:menucat
+        }
+
+        this.props.dispatcher(action)
 
     }
 
@@ -41,7 +78,7 @@ componentDidMount(){
                        <tbody>
                     {
                         
-                      this.state.menu.map( (menu,index) => <tr  key={index}><td><MenuList kid={this.props.id} menu={menu}/></td></tr> )    
+                      this.props.copyMenu.map( (menu,index) => <tr  key={index}><td><MenuList kid={this.props.id} menu={menu}/></td></tr> )    
 
                     }                       
                    
@@ -54,7 +91,25 @@ componentDidMount(){
 }
 
 
+const mapStateToProps= (state)=>{
+
+return {
+    copyMenu:state.copyMenu
+}
+
+}
+
+const mapDispatcherToProps = (dispatch) => {
+
+
+    return {
+        dispatcher:(action) =>{
+            dispatch(action);
+        }
+    }
+}
 
 
 
-export default connect() (Menu);
+
+export default connect(mapStateToProps,mapDispatcherToProps) (Menu);

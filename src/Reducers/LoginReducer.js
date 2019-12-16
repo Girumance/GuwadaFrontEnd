@@ -124,6 +124,82 @@ const LoginReducer=(state={},action) =>{
         }
     }
 
+    else if(action.type==="ACTION_ADDORDERS"){
+        
+        
+        return {
+            ...state,
+            orders:action.orders
+        }
+    }
+
+    else if(action.type==="ACTION_ADDCURRENTDISPLAY"){
+        
+        
+        return {
+            ...state,
+            currentDisplay:action.currentDisplay
+        }
+    }
+
+    else if(action.type==="ACTION_ADDCOPYKIT"){
+        
+        
+        return {
+            ...state,
+            copyKit:action.copyKit
+        }
+    }
+
+    else if(action.type==="ACTION_ADDMENUCAT"){
+        
+        
+        return {
+            ...state,
+    menuCat:action.menuCat
+        }
+    }
+
+    else if(action.type==="ACTION_ADDMENU"){
+        
+        
+        return {
+            ...state,
+    menu:action.menu
+        }
+    }
+    
+    else if(action.type==="ACTION_ADDCOPYMENU"){
+        
+        
+        return {
+            ...state,
+    copyMenu:action.copyMenu
+        }
+    }
+
+
+    else if(action.type==="ACTION_ADDCATID"){
+        
+        
+        return {
+            ...state,
+            catId:action.catId
+        }
+    }
+
+    else if(action.type==="ACTION_ADDALLID"){
+        
+        
+        return {
+            ...state,
+            allId:action.allId
+        }
+    }
+
+
+
+
 
 
 

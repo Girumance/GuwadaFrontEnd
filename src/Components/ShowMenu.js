@@ -1,14 +1,27 @@
 import React from "react"
-import image1 from "../IMG/logo1.png"
-import image2 from "../IMG/logo2.jpg"
-import image3 from "../IMG/logo3.jpg"
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 import Axios from "axios"
 import { connect } from "react-redux"
 
-
-
+const useStyles = makeStyles({
+    card: {
+      maxWidth: 345,
+    },
+    media: {
+      height: 140,
+    },
+  });
+  
  class ShowMenu extends React.Component{
 
+   
     constructor(){
         super()
         this.onDelete=this.onDelete.bind(this);
@@ -42,11 +55,48 @@ import { connect } from "react-redux"
         }
 
     render(){
+      
         return(
            
 
+            <Card className={useStyles.card}>
+      <CardActionArea>
+        <CardMedia
+          className={useStyles.media}
+          image={`http://localhost:1234/image/download/${this.props.menu.id}`}
+          title="Contemplative Reptile"
+        >
+
+            <img  className="img-fluid" src={`http://localhost:1234/image/download/${this.props.menu.id}`}/>
+
+            </CardMedia>
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+          {this.props.menu.title}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+          {this.props.menu.description}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Edit
+        </Button>
+        <Button onClick={this.onDelete} size="small" color="primary">
+          Delete
+        </Button>
+      </CardActions>
+    </Card>
+
+
+
+
+
+            /*
+
                     <div class="card">
-                        <img class="card-img-top" src={image1} alt="Card image cap"/>
+                        <img class="card-img-top img-fluid" src={`http://localhost:1234/image/download/${this.props.menu.id}`} alt="Card image cap"/>
 
                         <div class="card-body">
                             <h5 class="card-title"><b>Title:</b>{this.props.menu.title}</h5>
@@ -66,6 +116,8 @@ import { connect } from "react-redux"
                         </div>
                         </div>
                         </div>
+
+                        */
 
                   
         );

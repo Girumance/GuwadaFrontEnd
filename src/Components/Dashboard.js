@@ -12,6 +12,8 @@ import Axios from "axios"
 import { connect } from "react-redux"
 import { NavLink, HashRouter,withRouter } from "react-router-dom/cjs/react-router-dom"
 import { Paper } from "@material-ui/core"
+import AddMenu from "./AddMenu"
+import Uuid from "uuid/v4"
 
  class Dashboard extends React.Component{
 
@@ -19,14 +21,21 @@ import { Paper } from "@material-ui/core"
         super()
         this.AddKMenu=this.AddKMenu.bind(this)
         this.ShowMenu=this.ShowMenu.bind(this)
-        this.pendingOrder=this.pendingOrder.bind(this)
+        this.pendingOrder=this.pendingOrder.bind(this);
         this.AddKitchen=this.AddKitchen.bind(this)
+        this.onProcessOrder=this.onProcessOrder.bind(this)
+        this.onDeliveredOrder=this.onDeliveredOrder.bind(this)
 
        
 
         this.state={
-            currentDisplay:<DashboardShow/>,
-            AddKitchen:true
+            AddKitchen:true,
+            addmenu:null,
+            showmenu:null,
+            pending:null,
+            delivered:null,
+            process:null,
+            addkitchen:null,
         }
     }
 
@@ -51,30 +60,111 @@ import { Paper } from "@material-ui/core"
         })
     }
     AddKitchen(){
-        this.setState({
+        let action={
+            type:"ACTION_ADDCURRENTDISPLAY",
             currentDisplay:<AddKitchen/>
-        }) 
+        }
+
+        this.props.dispatch(action)
+
+        this.setState({
+            addmenu:null,
+            showmenu:null,
+            pending:null,
+            delivered:null,
+            process:null,
+            addkitchen:"selected_menu",
+        })
+
     }
 
     AddKMenu(){
+        let action={
+            type:"ACTION_ADDCURRENTDISPLAY",
+            currentDisplay:<AddMenu/>
+        }
+
+        this.props.dispatch(action)
         this.setState({
-            currentDisplay:<AddKMenu/>
+            addmenu:"selected_menu",
+            showmenu:null,
+            pending:null,
+            delivered:null,
+            process:null,
+            addkitchen:"",
         })
     }
 
     ShowMenu(){
+        let action={
+            type:"ACTION_ADDCURRENTDISPLAY",
+            currentDisplay:<ShowMenuWrapper/>
+        }
+
+        this.props.dispatch(action)
         this.setState({
-            currentDisplay: <ShowMenuWrapper/>
+            addmenu:"",
+            showmenu:"selected_menu",
+            pending:null,
+            delivered:null,
+            process:null,
+            addkitchen:"",
         })
     }
 
     pendingOrder(){
+        let action={
+            type:"ACTION_ADDCURRENTDISPLAY",
+            currentDisplay: <Order key={Uuid()} type={"pending"}/>
+        }
+        this.props.dispatch(action)
 
         this.setState({
-            currentDisplay: <Order/>
+            addmenu:"",
+            showmenu:"",
+            pending:"selected_menu",
+            delivered:null,
+            process:null,
+            addkitchen:"",
         })
 
+    }
 
+    
+    onProcessOrder(){
+        let action={
+            type:"ACTION_ADDCURRENTDISPLAY",
+            currentDisplay: <Order key={Uuid()} type={"onprocess"}/>
+        }
+        this.props.dispatch(action)
+        this.setState({
+            addmenu:"",
+            showmenu:"",
+            pending:"",
+            delivered:null,
+            process:"selected_menu",
+            addkitchen:"",
+        })
+        
+       
+    }
+    onDeliveredOrder(){
+        let action={
+            type:"ACTION_ADDCURRENTDISPLAY",
+            currentDisplay:<Order key={Uuid()} type={"delivered"}/>
+        }
+        this.props.dispatch(action)
+
+        this.props.dispatch(action)
+        this.setState({
+            addmenu:"",
+            showmenu:"",
+            pending:"",
+            delivered:"selected_menu",
+            process:"",
+            addkitchen:"",
+        })
+          
     }
 
 render(){
@@ -93,7 +183,7 @@ render(){
                 <div className="dashboard_menu">
 
                     <Paper>
-                    <table className="table table-bordere">
+                    <table className="table table-hover">
                         <tr>
                             <th>Dashboard</th>
                     
@@ -103,21 +193,25 @@ render(){
                             this.state.AddKitchen==false ? <tr onClick={this.AddKitchen}><th>Add Kitchen</th> </tr>  :""
                         
                         }
-                        <tr>
+                        <tr className={this.state.addmenu}>
                          <th onClick={this.AddKMenu}>  Add Menu  </th>   
                         </tr>
 
-                        <tr>
+                        <tr className={this.state.showmenu}>
                          <th  onClick={this.ShowMenu}> Show Menu</th>   
                         </tr>
 
-                        <tr>
+                        <tr className={this.state.pending}>
                          <th onClick={this.pendingOrder}>Pending Orders</th>   
                         </tr>
 
+                        <tr className={this.state.process}>
+                         <th onClick={this.onProcessOrder}>OnProcess Orders</th>   
+                        </tr>
 
-                        <tr>
-                         <th>Delivered Orders</th>   
+
+                        <tr className={this.state.delivered}>
+                         <th onClick={this.onDeliveredOrder} >Delivered Orders</th>   
                         </tr>
                     </table>
 
@@ -128,7 +222,7 @@ render(){
                     <div className="col-md-10">
 
                    {
-                       this.state.currentDisplay
+                       this.props.currentDisplay
                    } 
 
                     </div>
@@ -148,7 +242,8 @@ render(){
 const mapStateToProps= (state) =>{
     return {
         account:state.account,
-        isLoggedIn:state.isLoggedIn
+        isLoggedIn:state.isLoggedIn,
+        currentDisplay:state.currentDisplay
     }
 }
 

@@ -45,7 +45,7 @@ class AddKitchen extends React.Component{
         this.onImageUpload(res.data)
 
         });
-          this.onImageUpload();
+         // this.onImageUpload();
         
   
     }

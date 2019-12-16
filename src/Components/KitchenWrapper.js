@@ -11,21 +11,19 @@ export default class KitchenWrapper extends React.Component{
             
             <div className="wrapper">
 
-                <table className="table">
-                    <tbody>
+               
                    {
 
                      
 
-                this.props.kitchen.map( (kitchen,index) => <tr key={index}>
-                <td> <Kitchen kitchen={kitchen}/> </td>
-                 </tr>)
+                this.props.kitchen.map( (kitchen,index) =>  
+                 <Kitchen key={index} kitchen={kitchen}/> 
+                )
 
                    } 
                    
                    
-                   </tbody>
-                </table>
+             
 
             </div>
         );

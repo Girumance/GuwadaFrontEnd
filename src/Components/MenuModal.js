@@ -12,6 +12,7 @@ import { Paper } from "@material-ui/core";
             this.close=this.close.bind(this);
             this.onDelete=this.onDelete.bind(this);
             this.onDelivered=this.onDelivered.bind(this)
+            this.onProcess=this.onProcess.bind(this)
         }
 
         componentDidMount(){
@@ -37,7 +38,7 @@ import { Paper } from "@material-ui/core";
         
         }
         onDelivered(){
-            let path="http://127.0.0.1:1234/order/delivered/"+this.props.order.orderId;
+            let path="http://127.0.0.1:1234/order/makedelivered/"+this.props.order.orderId;
                 
                     Axios.get(path).then( res => {
 
@@ -56,13 +57,24 @@ import { Paper } from "@material-ui/core";
 
         }
 
-    render(){
+        onProcess(){
 
-           //console.log(this.state.meal.customerWrapper)
-          
-           /*
-        
-        */
+            let path="http://127.0.0.1:1234/order/makeonprocess/"+this.props.order.orderId;
+                
+                    Axios.get(path).then( res => {
+
+            })
+
+        }
+
+    render(){
+            let css="";
+          if(this.props.order.orderStatus==="Pending")
+          css="bg-danger pending"
+          else if(this.props.order.orderStatus==="Delivered")
+          css="bg-success pending"
+          else if(this.props.order.orderStatus==="OnProcess")
+          css="bg-warning pending"
 
 
         return(
@@ -88,17 +100,20 @@ import { Paper } from "@material-ui/core";
                         <hr/>
                              </div>
                              <div className="overflow">
-                                 <Paper>
+                                 
                             {
 
                                 this.state.meal.map( (state,index) => 
-                            <div className="meal" key={index}>
+                                <Paper key={index}>
+                            <div className="meal" >
+                                
                         <h5><b>Title:</b>{state.title}</h5>
                         <h5><b>Quantity:</b>{state.quantitiy}</h5>
-                        
+                   
                         </div>
+                        </Paper>
                             )}
-                            </Paper>
+                            
                             </div>
                            </div> 
                     <div className="col-md-6 ">
@@ -112,7 +127,8 @@ import { Paper } from "@material-ui/core";
                         <h5><b>Phone No:</b>{this.props.order.customer.phoneNumber}</h5>
                         <h5><b>Block:</b>{this.props.order.customer.blockNumber}</h5>
                         <h5><b>Room No:</b>{this.props.order.customer.roomNumber}</h5>
-                        <h5><b>Status:</b><span className="bg-warning pending">Pending</span></h5>
+                        <h5><b>Date:</b>{this.props.order.dateTime}</h5>
+                        <h5><b>Status:</b><span className={css}>{this.props.order.orderStatus}</span></h5>
                         
                         
                         
@@ -121,6 +137,9 @@ import { Paper } from "@material-ui/core";
             <div className="row">
                     <div className="col-md-2">
                     <button onClick={this.onDelivered} className="btn btn-success  btn-block">Delivered</button>
+                    </div>
+                    <div className="col-md-2">
+                    <button onClick={this.onProcess} className="btn btn-warning  btn-block">OnProcess</button>
                     </div>
 
                     <div className="col-md-2">

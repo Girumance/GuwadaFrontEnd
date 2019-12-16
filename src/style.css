@@ -34,7 +34,7 @@ background-color: #001970;
 
 .Footer{
 background-color: #001970;
- 
+ margin-top:5vh;
 min-height: 50vh;
 padding:10%;
 
@@ -210,22 +210,19 @@ color:#666;
 
 .cat{
     margin-top: 3%;
-    position: relative;
+    
     min-height: 40vh;
     
 }
 
 
-.catagory table tr:hover{
 
-    background-color: #AAA;
-}
 
 .pos-fixed{
 position:fixed;
-width:30%;
-margin-left:7%;
+width:10%;
 }
+
 .kitchen{
     position: relative;
 }
@@ -414,7 +411,7 @@ form{
 
  .pending{
     padding:8px;
-    color: #666;
+    color: #fff;
     border-radius: 8px;
  }
 
@@ -428,6 +425,14 @@ form{
     
  }
  
+ .selected_menu{
+     background: #001970;
+     color: #eeffee;
+ }
+
+ .selected_menu th{
+     color: #fff;
+ }
  
 
  .signup span{
@@ -454,7 +459,10 @@ form{
     
 
  }
+ .dashboard_menu table tr{
+    cursor: pointer;
 
+ }
 
  .logininputs select{
 
@@ -654,3 +662,28 @@ display: none;
   .flex{
       display:flex;
   }
+
+  .bt-margin{
+      margin-bottom: 2vh;
+
+  }
+
+  .img-heigh{
+
+    height: 30vh;
+  }
+  .likes i{
+
+        color: #aaa;
+  }
+  .likes span{
+      color: #AAA;
+  }
+
+  .likes .active{
+      color: blue;
+  }
+  .likes{
+      margin-bottom: 5px;
+  }
+
